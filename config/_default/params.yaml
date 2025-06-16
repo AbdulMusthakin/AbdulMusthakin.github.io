@@ -40,7 +40,7 @@ header:
 # Site footer
 footer:
   copyright:
-    notice: '© {year} Abdul Musthakin. This work is licensed under {license} <br> <a href="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/">Free SVG Backgrounds and Patterns by SVGBackgrounds.com</a>'
+    notice: '© {year} Abdul Musthakin. This work is licensed under {license} <br> <a href="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/">Front Page Background by SVGBackgrounds.com</a>'
     license:
       enable: true
       allow_derivatives: false
