@@ -122,7 +122,7 @@ skills:
         description: ''
         percent: 80
         icon: "custom/gamepad-solid"
-      - name:
+      - name: ''
 
 languages:
   - name: English
