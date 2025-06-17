@@ -144,4 +144,4 @@ awards:
 
 ## About Me
 
-I am a student.
+I am currently a student at Cardiff Sixth Form College studying for my A-levels. I plan on studying mathematics at university.
