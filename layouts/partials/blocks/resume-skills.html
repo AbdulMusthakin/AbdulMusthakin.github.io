@@ -20,7 +20,7 @@
 <div class="row">
 
   {{ with $block.content.text }}
-  <div class="col-md-12 text-left mb-3">
+  <div class="col-md-12 text-right mb-3">
     {{ . | emojify | $page.RenderString }}
   </div>
   {{ end }}
