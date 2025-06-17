@@ -19,6 +19,7 @@
 
   <div class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
     {{ $block.content.title | markdownify | emojify }}
+    
   </div>
 
   {{ with $block.content.text }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
