@@ -50,6 +50,10 @@ interests:
   - Mathematics
 
 education:
+  - area: A-levels
+    institution: CSFC
+    date_start: 2024-09-01
+    date_end: ''
   - area: GCSEs (10 A*s)
     date_start: 2019-09-01
     date_end: 2024-06-01
