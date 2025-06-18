@@ -1,5 +1,5 @@
 ---
-title: Blackboard Bold Numbers in LaTeX
+title: Blackboard Bold Numbers in $\LaTeX$
 summary: WIP
 date: 2025-06-18
 authors:
