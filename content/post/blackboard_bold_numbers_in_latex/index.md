@@ -11,15 +11,13 @@ image:
   caption: ''
 ---
 
-The other day, whilst typesetting some number-theory notes, I needed to mention a characteristic function. A characteristic/indicator function is a function $𝟙: X \subseteq A \to \{0, 1\}$ given by
+The other day, whilst typesetting some number-theory notes, I needed to mention a characteristic function. A characteristic/indicator function is a function $𝟙_A: X \subseteq A \to \{0, 1\}$ given by
 
 $$
-\begin{equation*}
 𝟙_A(x) \colonequals \begin{cases}
 1 & \text{if } x \in A, \\
 0 & \text{if } x \notin A.
 \end{cases}
-\end{equation*}
 $$
 
 What is the problem? Obviously, there is no issue in conveying the idea, so that will not be the subject of this post. Instead, I want to bring up the problem of the symbol used to represent the function. The $\LaTeX$ `amssymb` package features the `\mathbb` function for a blackboard bold typeface. Unfortunately, we only get capital letters (and lowercase 'k').
@@ -34,16 +32,14 @@ If I wanted to use Unicode characters in my document, I would need a $\TeX$ engi
 
 Quite a bit of time was spent searching for an alternative, but nothing could be found. I do not doubt that I could stitch up a 'perfect' solution, staying with pdfTeX, given enough time. However, that would be quite a bit of time allocated towards something that does not mean much.
 
-I settled with the typeface obtained using `\mathdf` from the `dsfonts` package. The double-struck one looked fine, but it was quite different from the rest of the blackboard bold typeface. That is why I made the final change with the following lines of code.
+I proceeded to settle with the typeface obtained using `\mathdf` from the `dsfonts` package. The double-struck one looked fine, but it was quite different from the rest of the blackboard bold typeface. That is why I made the final change with the following lines of code.
 
 ```Latex
 \newcommand{\bbone}{\text{\usefont{U}{bbold}{m}{n}1}}
 \MakeRobust{\bbone}
 ```
 
-{{< figure src="./comparison_ones.png"
-title="Comparison of double-struck and blackboard bold number one."
-numbered="true" lightbox="true" width="50%" class="[&>*]:rounded-full">}}
+My chosen solution is not perfect, as the number is slightly smaller than I would like (scaling it by a factor of about 1.1 would fix it). Below is a comparison of `\bbone{1}` (the creator of the image used `\mathbb{1}` to show the same thing) and `\mathds{1}`.
 
 <figure class=>
               <img src="./comparison_ones.png" width="50%" class="rounded-lg">
@@ -52,3 +48,14 @@ numbered="true" lightbox="true" width="50%" class="[&>*]:rounded-full">}}
                 number one.</h4>
               </figcaption>
 </figure>
+
+All of this hassle could have been avoided if I used a different symbol to represent characteristic functions. Indeed, there are a few commonly accepted notations. I could have used `\mathbf{1}_A`, giving $\mathbf{1}_A$. This just does not look that good. We also have $I_A$, $\mathbb{I}_A$, and $\chi_A$. I am not a big fan of using the letter 'I' here, and $\chi$ would conflict with the notation for Dirichlet characters:
+
+$$
+\chi_0 (n) \colonequals \begin{cases}
+1 & \text{if } \gcd(n,q) = 1, \\ 
+0 & \text{if } \gcd(n,q) > 1.
+\end{cases}
+$$
+
+Here, the function $\chi_0: \mathbb{Z} \to \{0, 1\}$ is the principal dirichlet character modulus $q \in \mathbb{Z}$. These functions are an important tool in the proof of Dirichlet's theorem for arithemtic progressions, so I would not wish to overload the symbol that represents them.
