@@ -1,6 +1,6 @@
 ---
 title: Blackboard Bold Numbers in $\LaTeX$
-summary: WIP
+summary: A discussion of the unexpected difficulty in using blackboard bold numbers when typesetting with $\LaTeX$.
 date: 2025-06-18
 authors:
   - admin
@@ -58,4 +58,6 @@ $$
 \end{cases}
 $$
 
-Here, the function $\chi_0: \mathbb{Z} \to \{0, 1\}$ is the principal dirichlet character modulus $q \in \mathbb{Z}$. These functions are an important tool in the proof of Dirichlet's theorem for arithemtic progressions, so I would not wish to overload the symbol that represents them.
+Here, the function $\chi_0: \mathbb{Z} \to \{0, 1\}$ is the principal dirichlet character modulus $q \in \mathbb{Z}^+$. These functions are an important tool in the proof of Dirichlet's theorem for arithemtic progressions, which is my main motivation for typesetting my number theory notes, so I would not wish to overload the symbol that represents them.
+
+I wrote this post after being frustrated with how difficult it is use blackboard bold numbers with $\LaTeX$. There are work-arounds, but it is something I would have expected to be more widely accessible. At the end of the day, it not a big deal to people who do not care about the most minor of details.
