@@ -39,7 +39,7 @@ I proceeded to settle with the typeface obtained using `\mathdf` from the `dsfon
 \MakeRobust{\bbone}
 ```
 
-My chosen solution is not perfect, as the number is slightly smaller than I would like (scaling it by a factor of about 1.1 would fix it). Below is a comparison of `\bbone{1}` (the creator of the image used `\mathbb{1}` to show the same thing) and `\mathds{1}`.
+Below is a comparison of `\bbone{1}` (the creator of the image used `\mathbb{1}` to show the same thing) and `\mathds{1}`.
 
 <figure class=>
               <img src="./comparison_ones.png" width="50%" class="rounded-lg">
@@ -48,6 +48,12 @@ My chosen solution is not perfect, as the number is slightly smaller than I woul
                 number one.</h4>
               </figcaption>
 </figure>
+
+Clearly, the former is slightly smaller. This is not something I want, but I found a simple fix using the `scalerel` package. Here is the alteration to the definition.
+
+```Latex
+\newcommand{\bbone}{\scalerel*{\text{\usefont{U}{bbold}{m}{n}1}}{\mathbb{R}}}
+```
 
 All of this hassle could have been avoided if I used a different symbol to represent characteristic functions. Indeed, there are a few commonly accepted notations. I could have used `\mathbf{1}_A`, giving $\mathbf{1}_A$. This just does not look that good. We also have $I_A$, $\mathbb{I}_A$, and $\chi_A$. I am not a big fan of using the letter 'I' here, and $\chi$ would conflict with the notation for Dirichlet characters:
 
