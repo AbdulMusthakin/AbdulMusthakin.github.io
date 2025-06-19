@@ -41,6 +41,6 @@ I settled with the typeface obtained using `\mathdf` from the `dsfonts` package.
 \MakeRobust{\bbone}
 ```
 
-{{< figure src="./trace.svg"
+{{< figure src="./comparison_ones.png"
 title="Comparison of double-struck and blackboard bold letter one."
-numbered="true" lightbox="true" width="50%">}}
+numbered="true" lightbox="true" width="50%" border-radius=15px>}}
