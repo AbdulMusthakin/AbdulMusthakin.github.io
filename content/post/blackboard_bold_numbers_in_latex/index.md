@@ -43,4 +43,4 @@ I settled with the typeface obtained using `\mathdf` from the `dsfonts` package.
 
 {{< figure src="./comparison_ones.png"
 title="Comparison of double-struck and blackboard bold letter one."
-numbered="true" lightbox="true" width="50%" class="rounded-s-lg">}}
+numbered="true" lightbox="true" width="50%" class="*:rounded-lg">}}
