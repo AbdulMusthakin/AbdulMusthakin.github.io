@@ -6,7 +6,9 @@
 # Appearance
 appearance:
   mode: system
-  color: purple
+  color: indigo
+
+customCSS: ['css/texify-catppuccin.css']
 
 # SEO
 marketing:
