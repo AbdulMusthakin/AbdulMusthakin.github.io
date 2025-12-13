@@ -45,9 +45,7 @@ hugoblox:
     hide_attribution: false
 appearance:
   mode: system
-  color: indigo
-customCSS:
-  - css/catppuccin.css
+  color: purple
 marketing:
   seo:
     site_type: Person
