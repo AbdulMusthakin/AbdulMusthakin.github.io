@@ -1,60 +1,86 @@
-# SITE SETUP
-# Guide: https://docs.hugoblox.com/tutorial/
-# Documentation: https://docs.hugoblox.com/
-# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
-
-# Appearance
+hugoblox:
+  schema: "2.0"
+  identity:
+    name: Abdul Musthakin
+    type: person
+    tagline: Student
+    description: Abdul Musthakin is currently a student at CSFC planning to study mathematics at university.
+  theme:
+    mode: system
+    pack: minimal
+    colors:
+      primary: purple
+      secondary: ""
+      neutral: ""
+  typography:
+    font: serif
+    size: md
+  layout:
+    radius: md
+    spacing: comfortable
+    avatar_shape: circle
+  header:
+    enable: true
+    style: navbar
+    sticky: true
+    align: center
+    search: true
+    theme_toggle: true
+  footer:
+    style: minimal
+    language_switcher: true
+  copyright:
+    notice: © {year} {name}
+  content:
+    math:
+      enable: false
+    toc:
+      enable: true
+    reading_time:
+      enable: true
+  search:
+    enable: true
 appearance:
   mode: system
   color: indigo
-
-customCSS: ['css/catppuccin.css']
-
-# SEO
+customCSS:
+  - css/catppuccin.css
 marketing:
   seo:
     site_type: Person
-    local_business_type: ''
-    org_name: ''
-    description: 'The highly-customizable Hugo Academic theme powered by Hugo Blox Builder. Easily create your personal academic website.'
-    twitter: 'GetResearchDev'
+    local_business_type: ""
+    org_name: ""
+    description: The highly-customizable Hugo Academic theme powered by Hugo Blox Builder. Easily create your personal academic website.
+    twitter: GetResearchDev
   analytics:
-    google_analytics: ''
-    baidu_tongji: ''
-    plausible: ''
-    fathom: ''
-    pirsch: ''
+    google_analytics: ""
+    baidu_tongji: ""
+    plausible: ""
+    fathom: ""
+    pirsch: ""
   verification:
-    google: ''
-    baidu: ''
-
-# Site header
+    google: ""
+    baidu: ""
 header:
   navbar:
     enable: true
-    blox: "navbar"
+    blox: navbar
     fixed_to_top: true
     show_search: true
     show_theme_chooser: true
     logo:
-      text: "Abdul Musthakin"
-
-# Site footer
+      text: Abdul Musthakin
 footer:
   copyright:
-    notice: '© {year} Abdul Musthakin. This work is licensed under {license}'
+    notice: © {year} Abdul Musthakin. This work is licensed under {license}
     license:
       enable: true
       allow_derivatives: false
       share_alike: true
       allow_commercial: false
-
-# Localization
 locale:
-  date_format: '2 Jan, 2006'
-  time_format: '3:04 PM'
-
-# Site features
+  date_format: 2 Jan, 2006
+  time_format: 3:04 PM
 features:
   math:
     enable: true
