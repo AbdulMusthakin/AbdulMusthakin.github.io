@@ -1,0 +1,562 @@
+/* TeXify3-inspired styling with Catppuccin colors for Hugo Blox */
+
+/* ============================================
+   Catppuccin Mocha Color Palette
+   ============================================ */
+:root {
+  /* Base colors */
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  
+  /* Text colors */
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  
+  /* Surface colors */
+  --ctp-surface0: #313244;
+  --ctp-surface1: #45475a;
+  --ctp-surface2: #585b70;
+  
+  /* Accent colors */
+  --ctp-lavender: #b4befe;
+  --ctp-blue: #89b4fa;
+  --ctp-sapphire: #74c7ec;
+  --ctp-sky: #89dceb;
+  --ctp-teal: #94e2d5;
+  --ctp-green: #a6e3a1;
+  --ctp-yellow: #f9e2af;
+  --ctp-peach: #fab387;
+  --ctp-maroon: #eba0ac;
+  --ctp-red: #f38ba8;
+  --ctp-mauve: #cba6f7;
+  --ctp-pink: #f5c2e7;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-rosewater: #f5e0dc;
+  
+  /* Light mode (Catppuccin Latte) */
+  --ctp-light-base: #eff1f5;
+  --ctp-light-mantle: #e6e9ef;
+  --ctp-light-crust: #dce0e8;
+  --ctp-light-text: #4c4f69;
+  --ctp-light-subtext1: #5c5f77;
+  --ctp-light-subtext0: #6c6f85;
+}
+
+/* ============================================
+   Base Typography & Layout (TeXify3 style)
+   ============================================ */
+
+body {
+  font-family: "Computer Modern Serif", "Latin Modern Roman", "Palatino", "Georgia", serif;
+  line-height: 1.6;
+  background-color: var(--ctp-base);
+  color: var(--ctp-text);
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Light mode */
+[data-mode="light"] body,
+body[data-theme="light"] {
+  background-color: var(--ctp-light-base);
+  color: var(--ctp-light-text);
+}
+
+/* ============================================
+   Header & Navigation
+   ============================================ */
+
+#header {
+  border-bottom: 2px solid var(--ctp-surface1);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+}
+
+[data-mode="light"] #header {
+  border-bottom-color: var(--ctp-light-mantle);
+}
+
+#header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+#header h1 a {
+  color: var(--ctp-mauve);
+  text-decoration: none;
+}
+
+[data-mode="light"] #header h1 a {
+  color: #8839ef; /* Catppuccin Latte mauve */
+}
+
+#header h1 a:hover {
+  color: var(--ctp-pink);
+}
+
+#header nav {
+  font-size: 0.95rem;
+}
+
+#header nav a {
+  color: var(--ctp-blue);
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+[data-mode="light"] #header nav a {
+  color: #1e66f5; /* Catppuccin Latte blue */
+}
+
+#header nav a:hover {
+  color: var(--ctp-sky);
+  text-decoration: underline;
+}
+
+/* ============================================
+   Content Styling
+   ============================================ */
+
+article.content {
+  font-size: 1rem;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ctp-mauve);
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+[data-mode="light"] h1,
+[data-mode="light"] h2,
+[data-mode="light"] h3,
+[data-mode="light"] h4,
+[data-mode="light"] h5,
+[data-mode="light"] h6 {
+  color: #8839ef;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.1rem; }
+
+/* Links */
+a {
+  color: var(--ctp-blue);
+  text-decoration: none;
+}
+
+[data-mode="light"] a {
+  color: #1e66f5;
+}
+
+a:hover {
+  color: var(--ctp-sky);
+  text-decoration: underline;
+}
+
+/* Code blocks */
+code {
+  font-family: "Computer Modern Typewriter", "Courier New", monospace;
+  background-color: var(--ctp-surface0);
+  color: var(--ctp-green);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+[data-mode="light"] code {
+  background-color: var(--ctp-light-mantle);
+  color: #40a02b; /* Catppuccin Latte green */
+}
+
+pre {
+  background-color: var(--ctp-surface0);
+  border: 1px solid var(--ctp-surface2);
+  border-radius: 5px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+[data-mode="light"] pre {
+  background-color: var(--ctp-light-mantle);
+  border-color: var(--ctp-light-crust);
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  color: var(--ctp-text);
+}
+
+[data-mode="light"] pre code {
+  color: var(--ctp-light-text);
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--ctp-mauve);
+  padding-left: 1rem;
+  margin-left: 0;
+  color: var(--ctp-subtext0);
+  font-style: italic;
+}
+
+[data-mode="light"] blockquote {
+  border-left-color: #8839ef;
+  color: var(--ctp-light-subtext0);
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+th, td {
+  border: 1px solid var(--ctp-surface1);
+  padding: 0.5rem;
+  text-align: left;
+}
+
+[data-mode="light"] th,
+[data-mode="light"] td {
+  border-color: var(--ctp-light-mantle);
+}
+
+th {
+  background-color: var(--ctp-surface0);
+  font-weight: 600;
+}
+
+[data-mode="light"] th {
+  background-color: var(--ctp-light-mantle);
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 1.5rem;
+}
+
+/* ============================================
+   Blog Post Specific
+   ============================================ */
+
+.post-heading h1 {
+  color: var(--ctp-mauve);
+  margin-bottom: 0.5rem;
+}
+
+.publish-metadata {
+  color: var(--ctp-subtext0);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+[data-mode="light"] .publish-metadata {
+  color: var(--ctp-light-subtext0);
+}
+
+.tag {
+  background-color: var(--ctp-surface0);
+  color: var(--ctp-blue);
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0.2rem;
+}
+
+[data-mode="light"] .tag {
+  background-color: var(--ctp-light-mantle);
+  color: #1e66f5;
+}
+
+.tag:hover {
+  background-color: var(--ctp-surface1);
+  color: var(--ctp-sky);
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+#footer {
+  border-top: 2px solid var(--ctp-surface1);
+  margin-top: 3rem;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--ctp-subtext0);
+}
+
+[data-mode="light"] #footer {
+  border-top-color: var(--ctp-light-mantle);
+  color: var(--ctp-light-subtext0);
+}
+
+/* ============================================
+   Math (KaTeX styling)
+   ============================================ */
+
+.katex {
+  color: var(--ctp-text);
+}
+
+[data-mode="light"] .katex {
+  color: var(--ctp-light-text);
+}
+
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* ============================================
+   Callouts/Alerts
+   ============================================ */
+
+.callout {
+  border-left: 4px solid var(--ctp-blue);
+  background-color: var(--ctp-surface0);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+}
+
+[data-mode="light"] .callout {
+  background-color: var(--ctp-light-mantle);
+  border-left-color: #1e66f5;
+}
+
+.callout.note {
+  border-left-color: var(--ctp-blue);
+}
+
+.callout.warning {
+  border-left-color: var(--ctp-yellow);
+}
+
+.callout.tip {
+  border-left-color: var(--ctp-green);
+}
+
+/* ============================================
+   Buttons & Interactive Elements
+   ============================================ */
+
+button, .button {
+  background-color: var(--ctp-mauve);
+  color: var(--ctp-base);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+[data-mode="light"] button,
+[data-mode="light"] .button {
+  background-color: #8839ef;
+  color: var(--ctp-light-base);
+}
+
+button:hover, .button:hover {
+  background-color: var(--ctp-pink);
+}
+
+/* ============================================
+   Dark Mode Toggle
+   ============================================ */
+
+.dark-mode-toggle {
+  background: transparent;
+  border: 1px solid var(--ctp-surface1);
+  color: var(--ctp-text);
+  padding: 0.3rem;
+  border-radius: 5px;
+}
+
+[data-mode="light"] .dark-mode-toggle {
+  border-color: var(--ctp-light-mantle);
+  color: var(--ctp-light-text);
+}
+
+.dark-mode-toggle:hover {
+  background-color: var(--ctp-surface0);
+}
+
+[data-mode="light"] .dark-mode-toggle:hover {
+  background-color: var(--ctp-light-mantle);
+}
+
+/* ============================================
+   Blog List/Archive
+   ============================================ */
+
+.post-group h3 {
+  color: var(--ctp-mauve);
+  margin-top: 2rem;
+}
+
+.post-group ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.post-group li {
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.post-group time {
+  color: var(--ctp-subtext0);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+[data-mode="light"] .post-group time {
+  color: var(--ctp-light-subtext0);
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 0.95rem;
+    padding: 0.5rem;
+  }
+  
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.35rem; }
+  h3 { font-size: 1.15rem; }
+  
+  .post-group li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .post-group time {
+    margin-left: 0;
+    margin-top: 0.25rem;
+  }
+}
+
+/* ============================================
+   Emphasis with dots (TeXify3 feature)
+   ============================================ */
+
+strong.chinese::before,
+strong.chinese::after {
+  content: "・";
+  color: var(--ctp-mauve);
+}
+
+[data-mode="light"] strong.chinese::before,
+[data-mode="light"] strong.chinese::after {
+  color: #8839ef;
+}
+
+/* ============================================
+   Horizontal Rules
+   ============================================ */
+
+hr {
+  border: none;
+  border-top: 2px solid var(--ctp-surface1);
+  margin: 2rem 0;
+}
+
+[data-mode="light"] hr {
+  border-top-color: var(--ctp-light-mantle);
+}
+
+/* ============================================
+   Figure Captions
+   ============================================ */
+
+figure {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+figcaption {
+  color: var(--ctp-subtext0);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+[data-mode="light"] figcaption {
+  color: var(--ctp-light-subtext0);
+}
+
+/* ============================================
+   Override Hugo Blox defaults
+   ============================================ */
+
+/* Remove default Hugo Blox background patterns */
+.dark .hb-dark-background,
+.dark [data-dark-mode] {
+  background-image: none !important;
+}
+
+/* Simplify navigation */
+.navbar {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Make content area cleaner */
+.article-container {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+/* ============================================
+   Fonts
+   ============================================ */
+
+/* Computer Modern Font (LaTeX font) */
+@font-face {
+  font-family: 'Computer Modern Serif';
+  src: url('https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts/cmunrm.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Computer Modern Serif';
+  src: url('https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts/cmunbx.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Computer Modern Serif';
+  src: url('https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts/cmunti.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Computer Modern Typewriter';
+  src: url('https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts/cmuntt.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
