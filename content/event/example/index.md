@@ -36,15 +36,13 @@ image:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
   focal_point: Right
 
-#links:
-#  - icon: twitter
-#    icon_pack: fab
-#    name: Follow
-#    url: https://twitter.com/georgecushen
-url_code: 'https://github.com'
-url_pdf: ''
-url_slides: 'https://slideshare.net'
-url_video: 'https://youtube.com'
+links:
+  - type: code
+    url: https://github.com
+  - type: slides
+    url: https://slideshare.net
+  - type: video
+    url: https://youtube.com
 
 # Markdown Slides (optional).
 #   Associate this talk with Markdown slides.
@@ -62,9 +60,8 @@ projects:
   - example
 ---
 
-{{% callout note %}}
-Click on the **Slides** button above to view the built-in slides feature.
-{{% /callout %}}
+> [!NOTE]
+> Click on the **Slides** button above to view the built-in slides feature.
 
 Slides can be added in a few ways:
 

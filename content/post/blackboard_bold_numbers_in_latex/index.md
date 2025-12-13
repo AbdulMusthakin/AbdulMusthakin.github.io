@@ -26,9 +26,8 @@ The way I used a blackboard bold one above was with Unicode, which gives us all 
 
 If I wanted to use Unicode characters in my document, I would need a $\TeX$ engine such as LuaTeX or XeTeX, whilst I am currently using pdfTeX. The latter is the fastest, though the only reason I use it is because it was the default one.
 
-{{% callout note %}}
-**Note:** I do not exactly know what a $\TeX$ engine actually is. I could not tell you what $\LaTeX$ is either without searching it up, so it is not too big of a deal.
-{{% /callout %}}
+> [!NOTE]
+> I do not exactly know what a $\TeX$ engine actually is. I could not tell you what $\LaTeX$ is either without searching it up, so it is not too big of a deal.
 
 Quite a bit of time was spent searching for an alternative, but nothing could be found. I do not doubt that I could stitch up a 'perfect' solution, staying with pdfTeX, given enough time. However, that would be quite a bit of time allocated towards something that does not mean much.
 

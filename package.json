@@ -4,6 +4,8 @@
   "description": "This is my personal website created using [Hugo Blox](https://hugoblox.com/).\r The SVG background on the front page is by [SVGBackgrounds.com](https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/).",
   "main": "index.js",
   "scripts": {
+    "start": "hugo server -D --navigateToChanged",
+    "dev": "npx hugoblox dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

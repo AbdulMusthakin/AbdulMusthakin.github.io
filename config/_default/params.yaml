@@ -5,6 +5,7 @@ hugoblox:
     type: person
     tagline: Student
     description: Abdul Musthakin is currently a student at CSFC planning to study mathematics at university.
+    organization: CSFC
   theme:
     mode: system
     pack: minimal
@@ -33,13 +34,15 @@ hugoblox:
     notice: © {year} {name}
   content:
     math:
-      enable: false
+      enable: true
     toc:
       enable: true
     reading_time:
       enable: true
   search:
     enable: true
+  pro:
+    hide_attribution: false
 appearance:
   mode: system
   color: indigo
