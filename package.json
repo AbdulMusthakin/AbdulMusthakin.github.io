@@ -1,0 +1,26 @@
+{
+  "name": "abdulmusthakin.github.io",
+  "version": "1.0.0",
+  "description": "This is my personal website created using [Hugo Blox](https://hugoblox.com/).\r The SVG background on the front page is by [SVGBackgrounds.com](https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbdulMusthakin/AbdulMusthakin.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AbdulMusthakin/AbdulMusthakin.github.io/issues"
+  },
+  "homepage": "https://github.com/AbdulMusthakin/AbdulMusthakin.github.io#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "@tailwindcss/typography": "^0.5.19",
+    "tailwindcss": "^4.1.18"
+  }
+}
