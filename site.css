@@ -1,0 +1,385 @@
+/* site.css: the whole site's styles, shared by every page.
+   Colours are in the :root block below; change them there and every page follows. */
+
+/* ---------- web fonts, served from this site (all SIL Open Font License; see fonts/) ---------- */
+@font-face{font-family:'Courier Prime';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/courier-prime-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Courier Prime';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/courier-prime-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Courier Prime';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/courier-prime-latin-700-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Courier Prime';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/courier-prime-latin-ext-700-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/dm-mono-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/dm-mono-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/dm-mono-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/dm-mono-latin-ext-500-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'DM Mono';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/dm-mono-latin-400-italic.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'DM Mono';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/dm-mono-latin-ext-400-italic.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'STIX Two Text';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/stix-two-text-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'STIX Two Text';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/stix-two-text-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'STIX Two Text';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/stix-two-text-greek-400-normal.woff2) format('woff2');unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF}
+@font-face{font-family:'STIX Two Text';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/stix-two-text-latin-400-italic.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'STIX Two Text';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/stix-two-text-latin-ext-400-italic.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'STIX Two Text';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/stix-two-text-greek-400-italic.woff2) format('woff2');unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF}
+/* Maths symbols: an 11-glyph subset of STIX Two Math, (c) The STIX Fonts Project Authors, SIL Open Font License 1.1 */
+@font-face{font-family:'AM Math';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/am-math.woff) format('woff');unicode-range:U+2124,U+2131,U+2190,U+2192,U+2203,U+220E,U+2217,U+2229,U+2245,U+2295,U+1D4A2}
+
+/* ---------- colours: one place to change the whole scheme ---------- */
+:root{
+  --bg:#0d0307;        /* page ground: almost black, with a faint Tyrian cast */
+  --surface:#17050d;   /* alternate section ground */
+  --raised:#240a16;    /* hover and highlight ground */
+  --line:#381726;      /* hairlines */
+  --line-2:#59273e;    /* stronger lines, outlines */
+  --tyrian:#82074e;    /* Tyrian purple, lifted for screens: fills */
+  --tyrian-2:#9f1662;  /* brighter fill, hover */
+  --accent:#f280b2;    /* accent for text and thin strokes */
+  --pale:#f7bfd4;
+  --gold:#e5bf6d;      /* link hover */
+  --text:#f6ebef;
+  --body:#dcccd2;
+  --muted:#ab909a;
+  --display:'Courier Prime','Courier New',Courier,monospace;                 /* headings */
+  --mono:'DM Mono',ui-monospace,'Cascadia Code',Menlo,Consolas,monospace;   /* everything else */
+  --math:'STIX Two Text','AM Math',Cambria,'Times New Roman',serif;         /* notation: the diagram and the readout */
+  color-scheme:dark;   /* native controls and scrollbars match */
+}
+
+/* ---------- base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px;scrollbar-color:var(--line-2) var(--bg);scrollbar-width:thin}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:10px;border:3px solid var(--bg)}
+::-webkit-scrollbar-thumb:hover{background:var(--tyrian)}
+body{margin:0;background:var(--bg);color:var(--body);font-family:var(--mono);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-wrap:break-word}   /* a word or address too long for its line breaks rather than running off the page */
+p{line-height:1.85}
+::selection{background:var(--tyrian);color:#fff}
+h1,h2,h3,p,ol,figure{margin:0}
+a{color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1px;transition:color .2s}
+a:hover{color:var(--gold)}
+a:focus-visible,button:focus-visible{outline:1px solid var(--accent);outline-offset:4px}
+sub,sup{font-size:.7em;line-height:0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+/* line breaking: headings and captions balanced, paragraphs without a stranded last word */
+h1,h2,h3,figcaption{text-wrap:balance}
+p,li{text-wrap:pretty}
+/* keyboard users can jump past the header; the link shows only when focused */
+.skip-link{position:fixed;top:12px;left:12px;z-index:200;padding:12px 18px;background:var(--tyrian);color:#fff;font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transform:translateY(-200%)}
+.skip-link:focus{transform:none;color:#fff}
+main:focus{outline:none}
+.label{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);line-height:1.6}
+.wrap{max-width:1300px;margin:0 auto;padding-left:60px;padding-right:60px;width:100%}
+.pad{padding-top:120px;padding-bottom:120px}
+
+/* ---------- header ---------- */
+.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;border-bottom:1px solid transparent;transition:background .4s ease}
+.site-nav.scrolled,.site-nav.open{background:rgba(13,3,7,.92);border-bottom-color:var(--line-2);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);animation:navflash .4s ease}
+@keyframes navflash{from{border-bottom-color:var(--pale)}to{border-bottom-color:var(--line-2)}}
+.nav-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 32px;min-height:84px}
+.brand{font-family:var(--display);font-size:20px;font-weight:700;letter-spacing:.06em;color:var(--text);text-decoration:none;padding:10px 0}
+.brand:hover{color:var(--accent)}
+.nav-links{position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:0 34px}
+.nav-sep{width:1px;height:14px;background:var(--line-2)}
+.nav-indicator{position:absolute;left:0;top:0;width:0;height:1px;background:var(--accent);opacity:0;pointer-events:none;transition:left .45s cubic-bezier(.65,0,.35,1),width .45s cubic-bezier(.65,0,.35,1),opacity .25s}
+.nav-indicator.no-anim{transition:opacity .25s}
+.nav-link{position:relative;font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:14px 0}
+.nav-link::after{content:"";position:absolute;left:0;bottom:8px;width:0;height:1px;background:var(--accent);transition:width .3s}
+.nav-link:hover,.nav-link:focus-visible{color:var(--text)}
+.nav-link:hover::after,.nav-link:focus-visible::after{width:100%}
+.nav-link.active{color:var(--text)}                 /* home page: the section being read (the sliding bar marks it; a hover
+                                                       underline stays put beneath it, so the bar lands on it rather than replacing it) */
+.nav-link.current{color:var(--text)}                /* other pages: the page you are on */
+.nav-link.current::after{width:100%}
+.menu-btn{display:none;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:44px;height:44px;margin-right:-10px;padding:0;background:transparent;border:0;cursor:pointer}
+.menu-btn span{display:block;width:24px;height:1px;background:var(--text);transition:transform .3s ease,opacity .3s ease}
+.site-nav.open .menu-btn span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.site-nav.open .menu-btn span:nth-child(2){opacity:0}
+.site-nav.open .menu-btn span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* ---------- top section ---------- */
+.hero{position:relative;overflow:hidden;min-height:100vh;min-height:100svh;display:flex;align-items:center}
+#complex{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero-inner{position:relative;z-index:1;display:flex;flex-wrap:wrap;align-items:center;gap:56px 72px;padding-top:112px;padding-bottom:112px}
+.hero-text{flex:999 1 440px;min-width:0;display:flex;flex-direction:column}
+.hero-label span{display:inline-block;max-width:100%}   /* each part stays whole while it fits on a line */
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(46px,7.5vw,96px);line-height:.98;letter-spacing:-.01em;color:var(--text);margin-top:28px}
+.hero h1 .surname{display:block;color:var(--accent)}
+/* the typing line: a phrase too long for one line wraps, with later lines starting under its first word;
+   the script reserves the height of the tallest phrase, so nothing below moves as it types */
+.role{position:relative;min-height:1.7em;margin-top:32px;padding-left:calc(1ch + 12px);font-family:var(--display);font-size:clamp(15px,4.4vw,20px);color:var(--text)}
+.role .dash{position:absolute;left:0;top:0;color:var(--accent)}
+.caret{display:inline-block;width:2px;height:1em;margin-left:4px;vertical-align:-.2em;background:var(--accent);animation:caret 1s step-end infinite}
+@keyframes caret{50%{opacity:0}}
+.cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:44px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 34px;font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;border:1px solid var(--line-2);transition:background .25s,color .25s,border-color .25s,transform .25s}
+.btn-primary{background:var(--tyrian);border-color:var(--tyrian);color:#fff}
+.btn-secondary{background:rgba(13,3,7,.7);border-color:#8a4f68;color:var(--text)}
+.btn-primary:hover{background:var(--tyrian-2);border-color:var(--tyrian-2);color:#fff}
+.btn-secondary:hover{border-color:var(--accent);color:var(--text)}
+.scroll-hint{position:absolute;z-index:1;bottom:40px;left:max(60px,calc((100% - 1300px)/2 + 60px));display:flex;align-items:center;gap:12px;min-height:44px;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+.scroll-hint span{display:block;width:40px;height:1px;background:var(--line-2);transition:width .3s,background .3s}
+.scroll-hint:hover{color:var(--text)}
+.scroll-hint:hover span{width:64px;background:var(--accent)}
+.betti{position:absolute;z-index:1;bottom:40px;right:max(60px,calc((100% - 1300px)/2 + 60px));min-height:44px;display:flex;align-items:center;gap:0 18px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-variant-numeric:tabular-nums}
+.betti b{font-family:var(--math);font-weight:400;font-size:16px;letter-spacing:0;text-transform:none;color:var(--pale)}
+.betti sub{font-family:var(--math);font-size:11px;letter-spacing:0;margin-left:1px}
+/* numbers in the maths face: DM Mono's slashed zero would read as an empty set */
+.betti .num{display:inline-block;min-width:1.6em;font-family:var(--math);font-size:15px;letter-spacing:0;color:var(--text)}
+.eps-ctl{display:inline-flex;align-items:center;gap:10px}
+.eps-ctl .num{min-width:1.6em}
+#eps{-webkit-appearance:none;appearance:none;width:112px;height:44px;margin:0;background:transparent;cursor:pointer}
+#eps::-webkit-slider-runnable-track{height:1px;background:var(--muted)}
+#eps::-moz-range-track{height:1px;background:var(--muted)}
+#eps::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;margin-top:-6px;border:0;border-radius:50%;background:var(--accent);transition:transform .2s}
+#eps::-moz-range-thumb{width:13px;height:13px;border:0;border-radius:50%;background:var(--accent)}
+#eps:hover::-webkit-slider-thumb{transform:scale(1.25)}
+#eps:focus-visible{outline:1px solid var(--accent);outline-offset:2px}
+/* the crosshair shows exactly where a click adds a point: the background and the empty parts of the
+   top section; over text and the figure the normal cursor returns, and links and buttons keep the hand */
+.hero.can-add #complex,.hero.can-add .hero-inner,.hero.can-add .hero-text{cursor:crosshair}
+.hero.can-add .hero-text>:not(.cta),.hero.can-add .diagram{cursor:auto}
+
+/* ---------- diagram beside the name ---------- */
+.diagram{flex:1 1 340px;max-width:440px;display:flex;flex-direction:column;gap:10px}
+#diagram{display:block;width:100%;height:auto;overflow:visible}
+#diagram text{font-family:var(--math);fill:var(--text)}
+.diagram figcaption{border-top:1px solid var(--line-2);padding-top:14px}
+
+/* ---------- sections ---------- */
+.sec{border-top:1px solid var(--line)}
+.sec.alt{background:var(--surface)}
+.sec-body{display:flex;flex-direction:column;gap:64px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 28px}
+.sec-num{font-family:var(--display);font-size:clamp(34px,5vw,64px);line-height:1.05;letter-spacing:-.01em;color:var(--accent)}
+.sec-head h2{font-family:var(--display);font-weight:400;font-size:clamp(34px,5vw,64px);line-height:1.05;letter-spacing:-.01em;color:var(--text)}
+.prose{max-width:60ch;display:flex;flex-direction:column;gap:22px}
+.prose .runin{font-weight:500;color:var(--text)}
+.cite{white-space:nowrap;color:var(--accent);text-decoration:underline dotted;text-decoration-thickness:1px}
+.cite:hover{color:var(--gold)}
+
+/* introduction: text beside the dependency figure */
+.intro{display:flex;flex-wrap:wrap;gap:64px 96px;align-items:flex-start}
+.intro .prose{flex:999 1 420px;min-width:0}
+.deps{flex:1 1 380px;max-width:520px;display:flex;flex-direction:column;gap:20px}
+.deps svg{display:block;width:100%;height:auto}
+.deps text{font-family:var(--mono);font-size:12.5px;text-anchor:middle}
+.deps .n-done rect{fill:var(--tyrian);stroke:var(--tyrian)}
+.deps .n-done text{fill:#fff}
+.deps .n-now rect{fill:var(--bg);stroke:var(--accent);stroke-width:1.25}
+.deps .n-now text{fill:var(--text)}
+.deps .n-next rect{fill:var(--bg);stroke:var(--muted);stroke-dasharray:4 4}
+.deps .n-next text{fill:var(--body)}
+.deps .edge{stroke:var(--muted);stroke-width:1;fill:none}
+.deps a{cursor:pointer}
+.deps a rect{transition:stroke .2s}
+.deps a:hover rect,.deps a:focus-visible rect{stroke:var(--gold);stroke-dasharray:none}
+.deps a:focus-visible{outline:none}
+.deps figcaption{display:flex;flex-direction:column;gap:12px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 24px}
+.legend span{display:inline-flex;align-items:center;gap:10px}
+.legend i{display:block;width:22px;height:12px;border:1px solid var(--muted)}
+.legend .k-done{background:var(--tyrian);border-color:var(--tyrian)}
+.legend .k-now{border-color:var(--accent)}
+.legend .k-next{border-style:dashed}
+
+/* preliminaries: timeline */
+.timeline{display:flex;flex-direction:column;gap:72px;border-left:1px solid var(--line-2);padding-left:48px}
+.tl-item{position:relative;display:flex;flex-wrap:wrap;gap:12px 48px}
+.tl-dot{position:absolute;left:-53px;top:8px;width:9px;height:9px;border:1px solid var(--accent);background:var(--bg);transform:rotate(45deg);transition:background .25s,transform .25s}
+.tl-date{flex:0 0 190px;padding-top:6px}
+.tl-main{flex:999 1 420px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.tl-main h3,.sub h3{font-family:var(--display);font-weight:400;font-size:22px;line-height:1.3;color:var(--text);transition:color .25s}
+.tl-main .label{color:var(--pale)}
+.tl-main p,.sub p{max-width:64ch}
+
+/* current work: numbered subsections */
+.subs{display:flex;flex-direction:column;border-top:1px solid var(--line-2)}
+.sub{position:relative;display:flex;flex-wrap:wrap;gap:12px 48px;margin:0 -24px;padding:40px 24px;transition:background .3s}
+.sub::after{content:"";position:absolute;left:24px;right:24px;bottom:0;height:1px;background:var(--line)}
+.sub-meta{flex:0 0 190px;display:flex;flex-direction:column;gap:4px;padding-top:6px}
+.sub-meta .n{color:var(--accent)}
+.sub-main{flex:999 1 420px;min-width:0;display:flex;flex-direction:column;gap:12px}
+.now{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;margin-bottom:-24px}
+.fact{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px}
+.fact>*,.now>*{min-width:0;max-width:100%}
+
+/* references */
+/* one key column for the whole list, as wide as the longest key, so every entry starts at the same place */
+.refs{list-style:none;padding:0;display:grid;grid-template-columns:minmax(84px,max-content) minmax(0,1fr);column-gap:28px;max-width:900px}
+.refs li{grid-column:1/-1;display:grid;grid-template-columns:subgrid;row-gap:4px;padding:16px 16px;margin:0 -16px;transition:background .3s}
+.refs li::after{content:"";position:absolute;left:16px;right:16px;bottom:0;height:1px;background:var(--line)}
+.refs .key{color:var(--accent)}
+.refs .entry{min-width:0}
+@supports not (grid-template-columns:subgrid){   /* older browsers: each entry lines up on its own */
+  .refs li{display:flex;flex-wrap:wrap;column-gap:28px}
+  .refs .key{flex:0 0 84px}
+  .refs .entry{flex:999 1 320px}
+}
+
+/* correspondence, footer */
+.sec-body.contact-body{gap:40px}
+.lede{max-width:72ch}
+.more a{font-size:14px;padding:12px 0}
+.contact-links{display:flex;flex-wrap:wrap;gap:0 40px;font-family:var(--mono);font-size:14px}
+.contact-links a{min-width:0;max-width:100%;padding:12px 0}
+footer{border-top:1px solid var(--line)}
+.foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 32px;padding-top:36px;padding-bottom:36px}
+.foot-links{display:flex;flex-wrap:wrap;gap:0 30px}
+.foot-link{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:12px 0}
+.foot-link:hover{color:var(--text)}
+.colophon{position:relative;padding-top:20px;padding-bottom:28px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 32px}
+.colophon::before{content:"";position:absolute;top:0;left:60px;right:60px;height:1px;background:var(--line)}
+.colophon .qed{color:var(--accent);font-family:var(--math);font-size:16px;letter-spacing:0;line-height:1}
+
+/* ---------- hover only where a pointer can hover ---------- */
+@media (hover:hover){
+  .btn:hover{transform:translateY(-2px)}
+  .sub:hover{background:var(--raised)}
+  .sub:hover h3,.tl-item:hover h3{color:var(--pale)}
+  .tl-item:hover .tl-dot{background:var(--accent);transform:rotate(45deg) scale(1.3)}
+  .refs li:hover{background:var(--raised)}
+}
+
+/* ---------- smaller screens ---------- */
+@media (max-width:1000px){
+  .scroll-hint{display:none}
+}
+@media (max-width:900px){
+  /* the top row keeps the bar's full height, so the name and the button don't jump when the menu opens */
+  .nav-inner{align-content:flex-start}
+  .menu-btn{display:inline-flex;height:84px}
+  .nav-links{display:none;flex-basis:100%;flex-direction:column;align-items:flex-start;padding-bottom:8px}
+  .site-nav.open .nav-links{display:flex}
+  .nav-indicator{display:none}
+  .nav-sep{width:100%;height:1px;margin:6px 0}
+}
+@media (max-width:768px){
+  html{scroll-padding-top:68px}
+  .wrap{padding-left:28px;padding-right:28px}
+  .pad{padding-top:80px;padding-bottom:80px}
+  .nav-inner{min-height:68px}
+  .menu-btn{height:68px}
+  .hero-inner{padding-top:112px;padding-bottom:140px}
+  .scroll-hint{display:none}
+  .betti{left:28px;right:28px;bottom:18px;justify-content:flex-start;flex-wrap:wrap;gap:0 18px}
+  .now{margin-bottom:-12px}
+  .sec-body{gap:48px}
+  .timeline{padding-left:28px;gap:56px}
+  .tl-dot{left:-33px}
+  .tl-date,.sub-meta{padding-top:0}
+  .sub{padding-top:32px;padding-bottom:32px}
+  .sub-meta{flex-direction:row;gap:14px}
+  .colophon::before{left:28px;right:28px}
+  .sec-head{column-gap:16px}
+  .sec-num,.sec-head h2{font-size:clamp(30px,8.4vw,40px)}
+  .foot{flex-direction:column;text-align:center;gap:12px}
+  .foot-links{justify-content:center;gap:0 22px}
+  .colophon{justify-content:center;text-align:center}
+}
+@media (max-width:560px){
+  .refs{display:block}
+  .refs li{display:flex;flex-direction:column}
+  .cta{flex-direction:column}
+  .cta .btn{min-height:48px;font-size:11.5px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important}
+  html{scroll-behavior:auto}
+  .site-nav{animation:none !important}
+  .caret{display:none}
+}
+
+/* a subsection or reference reached from a link glows briefly */
+/* drawn as a layer behind the text that fades away, so a hover highlight underneath is never interrupted */
+.sub,.refs li{position:relative;isolation:isolate}
+.flash::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--raised);pointer-events:none;animation:flash 2.4s ease-out forwards}
+@keyframes flash{0%,35%{opacity:1}100%{opacity:0}}
+
+/* ---------- pause control for the moving parts ---------- */
+.motion-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:28px;min-height:44px;padding:0;background:transparent;border:0;font:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--muted);cursor:pointer;transition:color .2s}
+.motion-btn:hover{color:var(--text)}
+.motion-btn svg{width:9px;height:9px;fill:currentColor}
+.motion-btn .i-play{display:none}
+html.motion-paused .motion-btn .i-play{display:block}
+html.motion-paused .motion-btn .i-pause{display:none}
+html.motion-paused .caret{animation:none}
+@media (prefers-reduced-motion:reduce){.motion-btn{display:none}}
+
+/* ---------- notes page, single notes, 404: one narrow column ---------- */
+.page-narrow{max-width:68ch;margin:0 auto;padding:56px 28px 80px;display:flex;flex-direction:column;gap:28px}
+.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:0 14px;font-size:14px;color:var(--muted)}
+.crumbs a{padding:12px 0}
+.page-title{font-family:var(--display);font-weight:400;font-size:40px;line-height:1.1;letter-spacing:-.01em;color:var(--text)}
+.rule{width:100%;border:0;border-top:1px solid var(--line);margin:0}
+.notes-group{display:flex;flex-direction:column;gap:10px}
+.notes-group h2{font-family:var(--mono);font-size:12px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.notes-group ol{padding-left:1.6rem;display:flex;flex-direction:column;gap:4px}
+.notes-group li{transition:color .2s}
+.status{display:inline-block;max-width:100%;color:var(--muted)}   /* kept in one piece unless it is longer than a whole line */
+@media (hover:hover){.notes-group li:hover{color:var(--text)}}
+
+/* one note (note-template.html) */
+.note-page .page-narrow{max-width:72ch;padding-bottom:96px;display:block}
+.note-page .crumbs{margin-bottom:40px}
+.note-page h1{margin:10px 0 0;font-family:var(--display);font-weight:400;font-size:clamp(32px,6vw,48px);line-height:1.1;letter-spacing:-.01em;color:var(--text)}
+.note-page h2{margin:56px 0 16px;font-family:var(--display);font-weight:400;font-size:24px;line-height:1.3;color:var(--text)}
+.note-page h2 .n{color:var(--accent);margin-right:14px}
+.note-page p{margin:0 0 20px}
+.note-page .abstract{margin:32px 0 0;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.note-page .abstract p{margin:0}
+.note-page .stmt{margin:28px 0;padding:18px 22px;background:var(--raised);border:1px solid var(--line)}
+.note-page .stmt p:last-child{margin-bottom:0}
+.note-page .stmt .head{font-weight:500;color:var(--text)}
+.note-page .proof .head{font-style:italic;color:var(--text)}
+.note-page .proof .qed{float:right;color:var(--accent);font-family:var(--math)}
+.note-page .katex-display{margin:24px 0;overflow-x:auto;overflow-y:hidden;padding:4px 0}
+.note-page .katex{font-size:1.12em;color:var(--text)}
+.note-page hr{border:0;border-top:1px solid var(--line);margin:56px 0 24px}
+
+/* 404 */
+.big-num{font-family:var(--display);font-size:clamp(72px,18vw,140px);line-height:1;color:var(--accent);letter-spacing:-.02em}
+
+/* ---------- printing: black on white, no moving parts ---------- */
+@media print{
+  :root{color-scheme:light;--bg:#fff;--surface:#fff;--raised:#fff;--line:#ccc;--line-2:#999;--text:#000;--body:#111;--muted:#555;--accent:#6b0a40;--pale:#6b0a40;--tyrian:#6b0a40}
+  html,body{background:#fff !important}
+  .site-nav,#complex,.betti,.scroll-hint,.cta,.role,.menu-btn{display:none !important}
+  .hero{min-height:0;display:block}
+  .hero-inner{padding-top:0;padding-bottom:24px}
+  .pad{padding-top:28px;padding-bottom:28px}
+  .sec,.sec.alt{background:#fff;border-color:#ccc}
+  #diagram path,#diagram g{stroke:#000}
+  #diagram text{fill:#000}
+  a{color:inherit;text-decoration:none}
+  .contact-links a::after{content:" — " attr(href);color:#555}
+  .sub,.tl-item,.refs li{break-inside:avoid}
+  .legend i{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .flash::before,.sidenotes,.skip-link{display:none !important}
+  .reveal{opacity:1 !important;transform:none !important;animation:none !important}
+  .site-nav.sub-nav{display:none}
+}
+
+/* ---------- arrival: the top section comes in as a short sequence ---------- */
+@keyframes rise{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:no-preference){
+  html:not(.no-intro) .reveal{opacity:0;transform:translateY(14px);animation:rise .9s cubic-bezier(.2,.7,.2,1) var(--d,0s) forwards}
+}
+
+/* ---------- a quieter readout: the scale control opens on hover or keyboard focus ---------- */
+/* (closed, it also gives back the gap beside it, so the readout's edge stays put) */
+@media (hover:hover){
+  .eps-ctl{max-width:0;margin-right:-18px;opacity:0;overflow:hidden;white-space:nowrap;transition:max-width .45s cubic-bezier(.65,0,.35,1),margin-right .45s cubic-bezier(.65,0,.35,1),opacity .3s}
+  .betti:hover .eps-ctl,.betti:focus-within .eps-ctl{max-width:420px;margin-right:0;opacity:1}
+}
+
+/* ---------- section 3: references in the margin ---------- */
+.sidenotes{display:none}
+@media (min-width:1180px){
+  .sidenotes{display:flex;flex-direction:column;gap:12px;flex:0 1 270px;min-width:0;padding-top:44px;font-size:12px;line-height:1.65;color:var(--muted)}
+  .sidenote{margin:0;transition:color .25s}
+  .sidenote .key{color:var(--accent);margin-right:2px}
+  .sidenote i{font-style:italic}
+  .sidenote.lit{color:var(--text)}
+}
+
+/* ---------- other pages: the same header (in place, not floating) and footer ---------- */
+.site-nav.sub-nav{position:sticky;background:rgba(13,3,7,.92);border-bottom-color:var(--line-2);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+

@@ -1,63 +1,97 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>notes · Abdul Musthakin</title>
+<title>Notes · Abdul Musthakin</title>
 <meta name="description" content="Expository mathematics notes by Abdul Musthakin.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=DM+Mono:wght@400;500&display=swap">
-<style>
-body{margin:0;background:#000}
-a{color:#AE93EC}a:hover{color:#E8A15C}
-</style>
+<link rel="canonical" href="https://abdulmusthakin.github.io/notes.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Notes · Abdul Musthakin">
+<meta property="og:description" content="Expository mathematics notes by Abdul Musthakin.">
+<meta property="og:url" content="https://abdulmusthakin.github.io/notes.html">
+<meta property="og:image" content="https://abdulmusthakin.github.io/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%230d0307'/%3E%3Cpath%20d='M14%2047%20L32%2015%20L50%2047%20Z'%20fill='%2382074e'%20stroke='%23f7bfd4'%20stroke-width='2.5'%20stroke-linejoin='round'/%3E%3Cg%20fill='%23f7bfd4'%3E%3Ccircle%20cx='14'%20cy='47'%20r='4.5'/%3E%3Ccircle%20cx='32'%20cy='15'%20r='4.5'/%3E%3Ccircle%20cx='50'%20cy='47'%20r='4.5'/%3E%3C/g%3E%3C/svg%3E">
+<meta name="theme-color" content="#0d0307">
+<meta name="color-scheme" content="dark">
+<link rel="preload" href="fonts/dm-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
-<div style="background: #000000; color: #c4c4c4; min-height: 100vh; font-family: 'DM Mono', ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace; font-size: 15px; line-height: 1.7">
-<main style="max-width: 68ch; margin: 0 auto; padding: 56px 24px 80px; display: flex; flex-direction: column; gap: 28px">
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="site-nav" class="site-nav sub-nav">
+<nav aria-label="Primary" class="wrap nav-inner">
+<a class="brand" href="index.html">AM</a>
+<button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+<div id="nav-links" class="nav-links">
+<a class="nav-link" href="index.html#introduction">Introduction</a>
+<a class="nav-link" href="index.html#preliminaries">Preliminaries</a>
+<a class="nav-link" href="index.html#work">Work</a>
+<a class="nav-link" href="index.html#references">References</a>
+<a class="nav-link" href="index.html#contact">Contact</a>
+<span class="nav-sep" aria-hidden="true"></span>
+<a class="nav-link current" aria-current="page" href="notes.html">Notes</a>
+</div>
+</nav>
+</header>
+<main id="main" class="page-narrow" tabindex="-1">
 
-<nav aria-label="Notes" style="display: flex; flex-wrap: wrap; align-items: center; gap: 0 14px; font-size: 14px; color: #8a8a8a">
-<a href="#mathematics" style="color: #AE93EC; text-underline-offset: 2px; padding: 12px 0">mathematics</a>
+<nav class="crumbs" aria-label="Notes">
+<a href="#mathematics">mathematics</a>
 <span aria-hidden="true">·</span>
-<a href="#physics" style="color: #AE93EC; text-underline-offset: 2px; padding: 12px 0">physics</a>
+<a href="#physics">physics</a>
 <span aria-hidden="true">·</span>
-<a href="#finance" style="color: #AE93EC; text-underline-offset: 2px; padding: 12px 0">finance</a>
-<span aria-hidden="true">·</span>
-<a href="./" style="color: #AE93EC; text-underline-offset: 2px; padding: 12px 0">../</a>
+<a href="#finance">finance</a>
 </nav>
 
-<h1 style="margin: 0; font-size: 16px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: #e6e6e6">Notes</h1>
+<h1 class="page-title">Notes</h1>
 
-<p style="margin: 0">Expository notes, written to fix my own understanding. Intuition first, machinery second. Nothing is posted yet; this is the planned shape.</p>
+<p>[intro · what these notes are, and how they are written] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut sit.</p>
 
-<hr style="width: 100%; border: 0; border-top: 1px solid #1e1e1e; margin: 0">
+<hr class="rule">
 
-<section id="mathematics" style="display: flex; flex-direction: column; gap: 10px">
-<h2 style="margin: 0; font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #8a8a8a">mathematics/</h2>
-<ol style="margin: 0; padding-left: 1.6rem; display: flex; flex-direction: column; gap: 4px">
-<li>covering spaces and the fundamental groupoid <span style="color: #8a8a8a">[planned]</span></li>
-<li>van Kampen as a pushout <span style="color: #8a8a8a">[planned]</span></li>
-<li>differential forms and de Rham cohomology <span style="color: #8a8a8a">[planned]</span></li>
-<li>sheaves, the étalé space and sheafification <span style="color: #8a8a8a">[planned]</span></li>
+<section id="mathematics" class="notes-group">
+<h2>mathematics/</h2>
+<ol>
+<li>[written note · title and length] Lorem ipsum dolor sit sit <span class="status">[written · PDF to be added]</span></li>
+<li>[written note · title and length] Lorem ipsum dolor sit amet, consectetur adipiscing sit <span class="status">[written · PDF to be added]</span></li>
+<li>[written note · title] Lorem ipsum dolor sit amet, lorem <span class="status">[written · PDF to be added]</span></li>
+<li>[planned note · topic] Lorem ipsum dolor sit <span class="status">[planned]</span></li>
+<li>[planned · topic] Lorem <span class="status">[planned]</span></li>
+<li>[planned note · topic] Lorem ipsum dolor do <span class="status">[planned]</span></li>
 </ol>
 </section>
 
-<section id="physics" style="display: flex; flex-direction: column; gap: 10px">
-<h2 style="margin: 0; font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #8a8a8a">physics/</h2>
-<p style="margin: 0; color: #8a8a8a">[empty]</p>
+<section id="physics" class="notes-group">
+<h2>physics/</h2>
+<p class="status">[empty]</p>
 </section>
 
-<section id="finance" style="display: flex; flex-direction: column; gap: 10px">
-<h2 style="margin: 0; font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #8a8a8a">finance/</h2>
-<p style="margin: 0; color: #8a8a8a">[empty]</p>
+<section id="finance" class="notes-group">
+<h2>finance/</h2>
+<p class="status">[empty]</p>
 </section>
-
-<hr style="width: 100%; border: 0; border-top: 1px solid #1e1e1e; margin: 0">
-
-<div style="font-size: 14px"><a href="./" style="color: #AE93EC; text-underline-offset: 2px; display: inline-block; padding: 12px 0">../ home</a></div>
 
 </main>
+
+<footer>
+<div class="wrap foot">
+<div class="label">© <span id="year">2026</span> Abdul Musthakin</div>
+<nav aria-label="Footer" class="foot-links">
+<a class="foot-link" href="index.html#introduction">Introduction</a>
+<a class="foot-link" href="index.html#preliminaries">Preliminaries</a>
+<a class="foot-link" href="index.html#work">Work</a>
+<a class="foot-link" href="index.html#references">References</a>
+<a class="foot-link" href="index.html#contact">Contact</a>
+<a class="foot-link" href="notes.html">Notes</a>
+</nav>
 </div>
+<div class="wrap colophon label">
+<span>Set in Courier Prime and DM Mono<span id="modified"></span></span>
+<span class="qed" aria-hidden="true">∎</span>
+</div>
+</footer>
+<script src="site.js"></script>
 </body>
 </html>

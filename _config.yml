@@ -1,0 +1,8 @@
+# GitHub Pages settings.
+# Files listed under exclude stay in the repository (and on your computer) but are not published.
+exclude:
+  - old-index.html
+  - old-notes.html
+  - note-template.html
+  - README.md
+  - drafted-text.md

@@ -1,216 +1,803 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Abdul Musthakin</title>
 <meta name="description" content="Abdul Musthakin — mathematics undergraduate at the University of Warwick.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=DM+Mono:wght@400;500&display=swap">
-<style>
-body{margin:0;background:#000}
-html{scroll-behavior:smooth}
-a{color:#AE93EC}a:hover{color:#E8A15C}
-</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Abdul Musthakin">
+<meta property="og:description" content="Mathematics undergraduate at the University of Warwick.">
+<meta property="og:url" content="https://abdulmusthakin.github.io/">
+<!-- Link-preview image: preview.png, next to this file -->
+<meta property="og:image" content="https://abdulmusthakin.github.io/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%230d0307'/%3E%3Cpath%20d='M14%2047%20L32%2015%20L50%2047%20Z'%20fill='%2382074e'%20stroke='%23f7bfd4'%20stroke-width='2.5'%20stroke-linejoin='round'/%3E%3Cg%20fill='%23f7bfd4'%3E%3Ccircle%20cx='14'%20cy='47'%20r='4.5'/%3E%3Ccircle%20cx='32'%20cy='15'%20r='4.5'/%3E%3Ccircle%20cx='50'%20cy='47'%20r='4.5'/%3E%3C/g%3E%3C/svg%3E">
+<meta name="theme-color" content="#0d0307">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://abdulmusthakin.github.io/">
+<link rel="preload" href="fonts/dm-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/courier-prime-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+<noscript><style>.diagram,.betti,.caret,.now{display:none}</style></noscript>
 </head>
 <body>
-<div style="background: #000000; color: #c4c4c4; font-family: 'DM Mono', ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace; font-size: 15px; line-height: 1.7">
+<script>
+/* The moving parts (the complex, the typing line) can be paused, and the choice is remembered on this device.
+   The arrival sequence is decided once, here: skipped if motion was already paused, never replayed by the pause button. */
+try { if (localStorage.getItem('am-motion') === 'paused') document.documentElement.classList.add('motion-paused', 'no-intro'); } catch (e) {}
+</script>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<header style="border-bottom: 1px solid #1e1e1e">
-<nav aria-label="Primary" style="max-width: 1120px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px">
-<a href="#top" style="font-family: 'Courier Prime', 'Courier New', Courier, monospace; font-size: 20px; font-weight: 700; letter-spacing: 0.06em; color: #ffffff; text-decoration: none; padding: 12px 0">AM</a>
-<div style="display: flex; flex-wrap: wrap; gap: 0 28px">
-<a href="#about" style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #c4c4c4; text-decoration: none; padding: 14px 0">About</a>
-<a href="#mathematics" style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #c4c4c4; text-decoration: none; padding: 14px 0">Mathematics</a>
-<a href="#background" style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #c4c4c4; text-decoration: none; padding: 14px 0">Background</a>
-<a href="notes.html" style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #c4c4c4; text-decoration: none; padding: 14px 0">Notes</a>
-<a href="#contact" style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #c4c4c4; text-decoration: none; padding: 14px 0">Contact</a>
+<header id="site-nav" class="site-nav">
+<nav aria-label="Primary" class="wrap nav-inner">
+<a class="brand" href="#top">AM</a>
+<button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+<div id="nav-links" class="nav-links">
+<a class="nav-link" href="#introduction">Introduction</a>
+<a class="nav-link" href="#preliminaries">Preliminaries</a>
+<a class="nav-link" href="#work">Work</a>
+<a class="nav-link" href="#references">References</a>
+<a class="nav-link" href="#contact">Contact</a>
+<span class="nav-sep" aria-hidden="true"></span>
+<a class="nav-link" href="notes.html">Notes</a>
+<span class="nav-indicator" aria-hidden="true"></span>
 </div>
 </nav>
 </header>
 
-<section id="top" style="max-width: 1120px; margin: 0 auto; padding: 96px 24px 112px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px 64px">
-<div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
-<div style="font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #8a8a8a">University of Warwick · MMath Mathematics · Class of 2030</div>
-<h1 style="margin: 0; font-family: 'Courier Prime', 'Courier New', Courier, monospace; font-weight: 400; font-size: clamp(44px, 8vw, 80px); line-height: 1.02; letter-spacing: -0.01em; color: #ffffff">Abdul<br><span style="color: #4d4d4d">Musthakin</span></h1>
-<div style="font-family: 'Courier Prime', 'Courier New', Courier, monospace; font-size: 20px; color: #e8e8e8">— mathematics undergraduate</div>
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px">
-<a href="#" style="display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 0 28px; background: #ffffff; color: #000000; border: 1px solid #ffffff; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none">CV</a>
-<a href="#contact" style="display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 0 28px; background: #000000; color: #ffffff; border: 1px solid #3c3c3c; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none">Get in touch</a>
+<main id="main" tabindex="-1">
+<section id="top" class="hero">
+<canvas id="complex" aria-hidden="true"></canvas>
+<div class="wrap hero-inner">
+<div class="hero-text">
+<div class="label hero-label reveal" style="--d:.1s"><span>University of Warwick ·</span> <span>MMath Mathematics ·</span> <span>Class of 2030</span></div>
+<h1 class="reveal" style="--d:.22s">Abdul <span class="surname">Musthakin</span></h1>
+<div class="role reveal" style="--d:.4s"><span class="dash" aria-hidden="true">—</span><span id="typed" aria-hidden="true">Mathematics undergraduate</span><span class="caret" aria-hidden="true"></span><span class="sr-only">Mathematics undergraduate. Algebraic topology, differential topology, algebraic geometry, mathematical physics.</span></div>
+<div class="cta reveal" style="--d:.55s">
+<a data-detail="cv" class="btn btn-primary" href="CV.pdf" type="application/pdf">CV</a>
+<a class="btn btn-secondary" href="#contact">Get in touch</a>
 </div>
 </div>
-<figure style="flex: 1 1 320px; max-width: 400px; margin: 0; display: flex; flex-direction: column; gap: 16px">
-<svg viewBox="0 0 360 250" role="img" aria-label="Commutative square: the fundamental group of X as the pushout of the fundamental groups of U and V over that of their intersection" style="width: 100%; height: auto; display: block">
-<defs>
-<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#8a8a8a" stroke-width="1.4"></path></marker>
-</defs>
-<g font-family="'Courier Prime', 'Courier New', Courier, monospace" font-size="17" fill="#e8e8e8" text-anchor="middle">
-<text x="70" y="46">π₁(U ∩ V)</text>
-<text x="290" y="46">π₁(U)</text>
-<text x="70" y="216">π₁(V)</text>
-<text x="290" y="216">π₁(X)</text>
-</g>
-<g stroke="#8a8a8a" stroke-width="1.2" fill="none">
-<path d="M128 40 H250" marker-end="url(#arr)"></path>
-<path d="M70 60 V188" marker-end="url(#arr)"></path>
-<path d="M290 60 V188" marker-end="url(#arr)"></path>
-<path d="M106 210 H250" marker-end="url(#arr)"></path>
-<path d="M236 168 H250 V154" stroke="#AE93EC"></path>
-</g>
-</svg>
-<figcaption style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8a8a8a">Fig. 0 — van Kampen, as a pushout</figcaption>
+<figure class="diagram reveal" style="--d:.7s" id="diagram-fig">
+<svg id="diagram" viewBox="0 0 360 230" role="img" aria-labelledby="diagram-title"></svg>
+<figcaption><div class="label" id="diagram-title"></div></figcaption>
 </figure>
-</section>
-
-<section id="about" style="border-top: 1px solid #1e1e1e">
-<div style="max-width: 1120px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 48px">
-<div style="display: flex; flex-direction: column; gap: 12px">
-<div style="font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #8a8a8a">01 · About</div>
-<h2 style="margin: 0; font-family: 'Courier Prime', 'Courier New', Courier, monospace; font-weight: 400; font-size: clamp(32px, 5vw, 52px); line-height: 1.1; letter-spacing: -0.01em; color: #ffffff">Who I Am</h2>
 </div>
-<div style="display: flex; flex-wrap: wrap; gap: 48px 64px">
-<div style="flex: 999 1 420px; min-width: 0; max-width: 60ch; display: flex; flex-direction: column; gap: 20px">
-<p style="margin: 0">I'm a first-year student at the University of Warwick on the four-year MMath Mathematics course.</p>
-<p style="margin: 0">Most of my time goes to self-directed pure mathematics. My taste runs structural and categorical: I'd rather understand why a construction is the universal one than compute with it, and I like an intuition-first overview before the formal machinery.</p>
-<p style="margin: 0">Alongside that I'm interested in the mathematical foundations of modern physics, and in quantitative finance as a possible direction after university.</p>
-</div>
-<div style="flex: 1 1 320px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 1px; background: #1e1e1e; border: 1px solid #1e1e1e; align-self: flex-start">
-<div style="background: #111111; padding: 28px 24px; display: flex; flex-direction: column; gap: 10px">
-<div style="font-family: 'Courier Prime', 'Courier New', Courier, monospace; font-size: 40px; line-height: 1; color: #ffffff">MMath</div>
-<div style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #8a8a8a">Mathematics, Warwick</div>
-</div>
-<div style="background: #111111; padding: 28px 24px; display: flex; flex-direction: column; gap: 10px">
-<div style="font-family: 'Courier Prime', 'Courier New', Courier, monospace; font-size: 40px; line-height: 1; color: #ffffff">2030</div>
-<div style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #8a8a8a">Expected graduation</div>
-</div>
-<div style="background: #111111; padding: 28px 24px; display: flex; flex-direction: column; gap: 10px">
-<div style="font-family: 'Courier Prime', 'Courier New', Courier, monospace; font-size: 40px; line-height: 1; color: #ffffff">π₁</div>
-<div style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #8a8a8a">Main focus: algebraic topology</div>
-</div>
-<div style="background: #111111; padding: 28px 24px; display: flex; flex-direction: column; gap: 10px">
-<div style="font-family: 'Courier Prime', 'Courier New', Courier, monospace; font-size: 40px; line-height: 1; color: #ffffff">Ω•</div>
-<div style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #8a8a8a">On the desk: Bott &amp; Tu</div>
-</div>
-</div>
-</div>
+<a class="scroll-hint reveal" style="--d:1.1s" href="#introduction"><span aria-hidden="true"></span>Continue to §1</a>
+<div class="betti reveal" style="--d:1.1s" title="Betti numbers of the Vietoris–Rips complex on the drifting points: components (β₀) and loops (β₁)">
+<label class="eps-ctl" title="Scale of the Vietoris–Rips complex. Click empty space above to add a point."><span>Vietoris–Rips</span><b aria-hidden="true">ε</b><input type="range" id="eps" min="50" max="190" step="2" value="118" aria-label="Scale ε of the Vietoris–Rips complex, in pixels"><span class="num" id="eps-val" aria-hidden="true">118</span></label>
+<button type="button" class="motion-btn" id="motion" aria-pressed="false"><svg class="i-pause" viewBox="0 0 10 10" aria-hidden="true"><rect x="1" y="0" width="3" height="10"></rect><rect x="6" y="0" width="3" height="10"></rect></svg><svg class="i-play" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 0 L10 5 L1 10 Z"></path></svg><span class="motion-label sr-only">Pause</span></button>
+<span aria-hidden="true"><b>β</b><sub>0</sub> = <span class="num" id="b0">–</span></span>
+<span aria-hidden="true"><b>β</b><sub>1</sub> = <span class="num" id="b1">–</span></span>
 </div>
 </section>
 
-<section id="mathematics" style="border-top: 1px solid #1e1e1e; background: #111111">
-<div style="max-width: 1120px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 48px">
-<div style="display: flex; flex-direction: column; gap: 12px">
-<div style="font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #8a8a8a">02 · Mathematics</div>
-<h2 style="margin: 0; font-family: 'Courier Prime', 'Courier New', Courier, monospace; font-weight: 400; font-size: clamp(32px, 5vw, 52px); line-height: 1.1; letter-spacing: -0.01em; color: #ffffff">What I'm Studying</h2>
+<section id="introduction" class="sec">
+<div class="wrap pad sec-body">
+<div class="sec-head"><span class="sec-num" aria-hidden="true">§1</span><h2>Introduction</h2></div>
+<div class="intro">
+<div class="prose">
+<p>[§1 ¶1 · who you are and what you study] Lorem ipsum dolor sit amet, consectetur adipiscing sit.</p>
+<p>[§1 ¶2 · how you spend your time, and your mathematical taste] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore eiusmod.</p>
+<p><span class="runin">Remark 1.1.</span> [§1 · Remark 1.1: how you like to learn] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod sit.</p>
+<p><span class="runin">Remark 1.2.</span> [§1 · Remark 1.2: interests beyond pure mathematics] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut sit.</p>
 </div>
-<div style="display: flex; flex-direction: column; border-top: 1px solid #3c3c3c">
-
-<article style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 32px 0; border-bottom: 1px solid #1e1e1e">
-<div style="flex: 0 0 150px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8a8a8a; padding-top: 6px">Active</div>
-<div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<h3 style="margin: 0; font-family: 'Courier Prime', 'Courier New', Courier, monospace; font-weight: 400; font-size: 22px; color: #ffffff">Algebraic topology</h3>
-<p style="margin: 0; max-width: 64ch">Covering space theory, van Kampen's theorem as a pushout statement, and the fundamental groupoid. More advanced material comes after Hatcher.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px">
-<span style="font-size: 11px; letter-spacing: 0.08em; color: #c4c4c4; border: 1px solid #3c3c3c; padding: 4px 10px">Hatcher</span>
-<span style="font-size: 11px; letter-spacing: 0.08em; color: #c4c4c4; border: 1px solid #3c3c3c; padding: 4px 10px">Lee, Topological Manifolds</span>
-<span style="font-size: 11px; letter-spacing: 0.08em; color: #c4c4c4; border: 1px solid #3c3c3c; padding: 4px 10px">tom Dieck</span>
-</div>
-</div>
-</article>
-
-<article style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 32px 0; border-bottom: 1px solid #1e1e1e">
-<div style="flex: 0 0 150px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8a8a8a; padding-top: 6px">Active</div>
-<div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<h3 style="margin: 0; font-family: 'Courier Prime', 'Courier New', Courier, monospace; font-weight: 400; font-size: 22px; color: #ffffff">Differential topology</h3>
-<p style="margin: 0; max-width: 64ch">Smooth manifolds, differential forms and cohomology. The topological side of differential geometry more than Riemannian geometry proper.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px">
-<span style="font-size: 11px; letter-spacing: 0.08em; color: #c4c4c4; border: 1px solid #3c3c3c; padding: 4px 10px">Bott &amp; Tu</span>
-</div>
-</div>
-</article>
-
-<article style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 32px 0; border-bottom: 1px solid #1e1e1e">
-<div style="flex: 0 0 150px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8a8a8a; padding-top: 6px">Incubating</div>
-<div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<h3 style="margin: 0; font-family: 'Courier Prime', 'Courier New', Courier, monospace; font-weight: 400; font-size: 22px; color: #ffffff">Algebraic geometry</h3>
-<p style="margin: 0; max-width: 64ch">Light, opportunistic reading for now: sheaves and presheaves, building toward schemes and Grothendieck's framework.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px">
-<span style="font-size: 11px; letter-spacing: 0.08em; color: #c4c4c4; border: 1px solid #3c3c3c; padding: 4px 10px">Next: Vakil</span>
-</div>
-</div>
-</article>
-
-<article style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 32px 0; border-bottom: 1px solid #1e1e1e">
-<div style="flex: 0 0 150px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8a8a8a; padding-top: 6px">Background</div>
-<div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<h3 style="margin: 0; font-family: 'Courier Prime', 'Courier New', Courier, monospace; font-weight: 400; font-size: 22px; color: #ffffff">Mathematical physics</h3>
-<p style="margin: 0; max-width: 64ch">The mathematical foundations of general relativity and quantum field theory.</p>
-</div>
-</article>
-
-</div>
-<div style="font-size: 14px"><a href="notes.html" style="color: #AE93EC; text-underline-offset: 2px; display: inline-block; padding: 12px 0">notes/</a></div>
-</div>
-</section>
-
-<section id="background" style="border-top: 1px solid #1e1e1e">
-<div style="max-width: 1120px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 48px">
-<div style="display: flex; flex-direction: column; gap: 12px">
-<div style="font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #8a8a8a">03 · Background</div>
-<h2 style="margin: 0; font-family: 'Courier Prime', 'Courier New', Courier, monospace; font-weight: 400; font-size: clamp(32px, 5vw, 52px); line-height: 1.1; letter-spacing: -0.01em; color: #ffffff">Where I've Been</h2>
-</div>
-<div style="display: flex; flex-direction: column; border-left: 1px solid #3c3c3c; padding-left: 32px; gap: 56px">
-
-<article style="position: relative; display: flex; flex-wrap: wrap; gap: 12px 40px">
-<div aria-hidden="true" style="position: absolute; left: -37px; top: 8px; width: 9px; height: 9px; box-sizing: border-box; border: 1px solid #ffffff; background: #000000"></div>
-<div style="flex: 0 0 190px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8a8a8a; padding-top: 6px">Sep 2026 — Jun 2030</div>
-<div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
-<h3 style="margin: 0; font-family: 'Courier Prime', 'Courier New', Courier, monospace; font-weight: 400; font-size: 22px; color: #ffffff">University of Warwick</h3>
-<div style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #e8e8e8">MMath Mathematics</div>
-<p style="margin: 0; max-width: 64ch">Four-year integrated master's. Currently in first year.</p>
-</div>
-</article>
-
-<article style="position: relative; display: flex; flex-wrap: wrap; gap: 12px 40px">
-<div aria-hidden="true" style="position: absolute; left: -37px; top: 8px; width: 9px; height: 9px; box-sizing: border-box; border: 1px solid #ffffff; background: #000000"></div>
-<div style="flex: 0 0 190px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8a8a8a; padding-top: 6px">Sep 2024 — Jun 2026</div>
-<div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
-<h3 style="margin: 0; font-family: 'Courier Prime', 'Courier New', Courier, monospace; font-weight: 400; font-size: 22px; color: #ffffff">Cardiff Sixth Form College</h3>
-<div style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #e8e8e8">A-levels</div>
-<p style="margin: 0; max-width: 64ch">Mathematics, Further Mathematics, Physics and Chemistry. Vice-President of the Mathematics Society, peer tutor, GCSE mentor and Open Day Ambassador.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px">
-<span style="font-size: 11px; letter-spacing: 0.08em; color: #c4c4c4; border: 1px solid #3c3c3c; padding: 4px 10px">Senior Mathematical Challenge · Silver</span>
-<span style="font-size: 11px; letter-spacing: 0.08em; color: #c4c4c4; border: 1px solid #3c3c3c; padding: 4px 10px">Senior Physics Challenge · Silver</span>
-</div>
-</div>
-</article>
-
+<figure class="deps">
+<svg viewBox="0 0 380 306" role="group" aria-label="Dependency graph of subjects">
+<defs><marker id="dep-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#ab909a" stroke-width="1.3"></path></marker></defs>
+<path class="edge" d="M60 58 V118" marker-end="url(#dep-arr)"></path>
+<path class="edge" d="M190 58 V118" marker-end="url(#dep-arr)"></path>
+<path class="edge" d="M320 58 V242" marker-end="url(#dep-arr)"></path>
+<path class="edge" d="M72 182 L108 242" marker-end="url(#dep-arr)"></path>
+<path class="edge" d="M178 182 L142 242" marker-end="url(#dep-arr)"></path>
+<a href="#sub-at" aria-label="Fundamental group: studied (see 3.1)"><g class="n-done"><rect x="0.5" y="4.5" width="119" height="49"></rect><text x="60" y="25">Fundamental </text><text x="60" y="42">group</text></g></a>
+<a href="#sub-dt" aria-label="Smooth manifolds: studied (see 3.2)"><g class="n-done"><rect x="130.5" y="4.5" width="119" height="49"></rect><text x="190" y="25">Smooth </text><text x="190" y="42">manifolds</text></g></a>
+<a href="#sub-ag" aria-label="Sheaves: ahead (see 3.3)"><g class="n-next"><rect x="260.5" y="4.5" width="119" height="49"></rect><text x="320" y="34">Sheaves</text></g></a>
+<a href="#sub-at" aria-label="Homology, cohomology: working on (see 3.1)"><g class="n-now"><rect x="0.5" y="128.5" width="119" height="49"></rect><text x="60" y="149">Homology, </text><text x="60" y="166">cohomology</text></g></a>
+<a href="#sub-dt" aria-label="Differential forms: studied (see 3.2)"><g class="n-done"><rect x="130.5" y="128.5" width="119" height="49"></rect><text x="190" y="149">Differential </text><text x="190" y="166">forms</text></g></a>
+<a href="#sub-at" aria-label="Spectral sequences: ahead (see 3.1)"><g class="n-next"><rect x="65.5" y="252.5" width="119" height="49"></rect><text x="125" y="273">Spectral </text><text x="125" y="290">sequences</text></g></a>
+<a href="#sub-ag" aria-label="Schemes: ahead (see 3.3)"><g class="n-next"><rect x="260.5" y="252.5" width="119" height="49"></rect><text x="320" y="282">Schemes</text></g></a>
+</svg>
+<figcaption>
+<div class="label">Fig. 2 — What leads to what, roughly. Each box links to its subsection.</div>
+<div class="legend label"><span><i class="k-done"></i>Studied</span><span><i class="k-now"></i>Working on</span><span><i class="k-next"></i>Ahead</span></div>
+</figcaption>
+</figure>
 </div>
 </div>
 </section>
 
-<section id="contact" style="border-top: 1px solid #1e1e1e; background: #111111">
-<div style="max-width: 1120px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 32px">
-<div style="display: flex; flex-direction: column; gap: 12px">
-<div style="font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #8a8a8a">04 · Contact</div>
-<h2 style="margin: 0; font-family: 'Courier Prime', 'Courier New', Courier, monospace; font-weight: 400; font-size: clamp(32px, 5vw, 52px); line-height: 1.1; letter-spacing: -0.01em; color: #ffffff">Let's Talk</h2>
+<section id="preliminaries" class="sec alt">
+<div class="wrap pad sec-body">
+<div class="sec-head"><span class="sec-num" aria-hidden="true">§2</span><h2>Preliminaries</h2></div>
+<div class="timeline">
+<article class="tl-item">
+<div class="tl-dot" aria-hidden="true"></div>
+<div class="tl-date label">Sep 2026 — Jun 2030</div>
+<div class="tl-main">
+<h3>University of Warwick</h3>
+<div class="label">MMath Mathematics</div>
+<p>[§2 · Warwick: the course] Lorem ipsum dolor sit lorem.</p>
+<p class="fact" data-show="modules"><span class="label">Options this year</span><span data-text="modules">ST121 Statistical Laboratory, PH136 Logic 1: Introduction to Symbolic Logic, CS141 Functional Programming</span></p>
 </div>
-<p style="margin: 0; max-width: 60ch">Happy to talk about mathematics, reading groups and research projects.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 0 32px; font-size: 14px">
-<a href="mailto:[YOUR EMAIL]" style="color: #AE93EC; text-underline-offset: 2px; padding: 12px 0">[YOUR EMAIL]</a>
-<a href="#" style="color: #AE93EC; text-underline-offset: 2px; padding: 12px 0">github/[YOUR HANDLE]</a>
-<a href="#" style="color: #AE93EC; text-underline-offset: 2px; padding: 12px 0">linkedin/[YOUR HANDLE]</a>
+</article>
+<article class="tl-item">
+<div class="tl-dot" aria-hidden="true"></div>
+<div class="tl-date label">Sep 2024 — Jun 2026</div>
+<div class="tl-main">
+<h3>Cardiff Sixth Form College</h3>
+<div class="label">A-levels</div>
+<p>Mathematics, Further Mathematics, Physics and Chemistry.</p>
+<p class="fact"><span class="label">Results</span><span>A* A* A* A*</span></p>
+<p>[§2 · Cardiff: societies, talks and seminars] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate do.</p>
+<p>[§2 · Cardiff: other roles and competitions] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et sit.</p>
+</div>
+</article>
 </div>
 </div>
 </section>
 
-<footer style="border-top: 1px solid #1e1e1e">
-<div style="max-width: 1120px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 32px; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8a8a">
-<div>© 2026 Abdul Musthakin</div>
-<a href="#top" style="color: #8a8a8a; text-decoration: none; padding: 12px 0; margin: -12px 0">Back to top</a>
+<section id="work" class="sec">
+<div class="wrap pad sec-body">
+<div class="sec-head"><span class="sec-num" aria-hidden="true">§3</span><h2>Current work</h2></div>
+<p class="now" data-show="reading"><span class="label">Currently on</span><span data-text="reading">[CHAPTER AND BOOK]</span><span class="label" data-show="readingDate">as of <span data-text="readingDate">[DATE]</span></span></p>
+<div class="subs">
+<article class="sub" id="sub-at">
+<div class="sub-meta label"><span class="n">3.1</span><span>Active</span></div>
+<div class="sub-main">
+<h3>Algebraic topology</h3>
+<p>[§3.1 · what you are covering, and from which books] Lorem ipsum dolor sit amet, consectetur consequat <a class="cite" href="#ref-hat02">[Hat02]</a> adipiscing elit, sed do eiusmod <a class="cite" href="#ref-lee11">[Lee11]</a>, amet <a class="cite" href="#ref-td08">[tD08]</a> tempor incididunt ut labore et dolore magna pariatur <a class="cite" href="#ref-may99">[May99]</a>, aliqua ut enim amet.</p>
+</div>
+</article>
+<article class="sub" id="sub-dt">
+<div class="sub-meta label"><span class="n">3.2</span><span>Active</span></div>
+<div class="sub-main">
+<h3>Differential topology</h3>
+<p>[§3.2 · what you are covering, and from which books] Lorem tempor <a class="cite" href="#ref-lee12">[Lee12]</a> eiusmod <a class="cite" href="#ref-bt82">[BT82]</a>. Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis sit <a href="notes.html">notes</a>.</p>
+</div>
+</article>
+<article class="sub" id="sub-ag">
+<div class="sub-meta label"><span class="n">3.3</span><span>Incubating</span></div>
+<div class="sub-main">
+<h3>Algebraic geometry</h3>
+<p>[§3.3 · what you are reading, and what comes next] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. <a class="cite" href="#ref-vak25">[Vak25]</a> eiusmod do.</p>
+</div>
+</article>
+<article class="sub" id="sub-ps">
+<div class="sub-meta label"><span class="n">3.4</span><span>Active</span></div>
+<div class="sub-main">
+<h3>Probability and statistics</h3>
+<p>[§3.4 · what you are reading] Lorem amet <a class="cite" href="#ref-cb02">[CB02]</a>.</p>
+</div>
+</article>
+<article class="sub" id="sub-mp">
+<div class="sub-meta label"><span class="n">3.5</span><span>Background</span></div>
+<div class="sub-main">
+<h3>Mathematical physics</h3>
+<p>[§3.5 · what this covers] Lorem ipsum dolor sit amet, consectetur consequat.</p>
+</div>
+</article>
+</div>
+<p class="fact more"><span class="label">See also</span><a href="notes.html">notes/</a></p>
+</div>
+</section>
+
+<section id="references" class="sec alt">
+<div class="wrap pad sec-body">
+<div class="sec-head"><h2>References</h2></div>
+<ol class="refs">
+<li id="ref-bt82"><span class="key">[BT82]</span><span class="entry">R. Bott and L. W. Tu, <i>Differential Forms in Algebraic Topology</i>. Graduate Texts in Mathematics 82, Springer, 1982.</span></li>
+<li id="ref-cb02"><span class="key">[CB02]</span><span class="entry">G. Casella and R. L. Berger, <i>Statistical Inference</i>, 2nd ed. Duxbury, 2002.</span></li>
+<li id="ref-hat02"><span class="key">[Hat02]</span><span class="entry">A. Hatcher, <i>Algebraic Topology</i>. Cambridge University Press, 2002.</span></li>
+<li id="ref-lee11"><span class="key">[Lee11]</span><span class="entry">J. M. Lee, <i>Introduction to Topological Manifolds</i>, 2nd ed. Graduate Texts in Mathematics 202, Springer, 2011.</span></li>
+<li id="ref-lee12"><span class="key">[Lee12]</span><span class="entry">J. M. Lee, <i>Introduction to Smooth Manifolds</i>, 2nd ed. Graduate Texts in Mathematics 218, Springer, 2012.</span></li>
+<li id="ref-may99"><span class="key">[May99]</span><span class="entry">J. P. May, <i>A Concise Course in Algebraic Topology</i>. Chicago Lectures in Mathematics, University of Chicago Press, 1999.</span></li>
+<li id="ref-td08"><span class="key">[tD08]</span><span class="entry">T. tom Dieck, <i>Algebraic Topology</i>. EMS Textbooks in Mathematics, European Mathematical Society, 2008.</span></li>
+<li id="ref-vak25"><span class="key">[Vak25]</span><span class="entry">R. Vakil, <i>The Rising Sea: Foundations of Algebraic Geometry</i>. Princeton University Press, 2025.</span></li>
+</ol>
+</div>
+</section>
+
+<section id="contact" class="sec">
+<div class="wrap pad sec-body contact-body">
+<div class="sec-head"><span class="sec-num" aria-hidden="true">§4</span><h2>Correspondence</h2></div>
+<p class="lede">[§4 · what people can write to you about] Lorem ipsum dolor sit lorem.</p>
+<div class="contact-links">
+<a data-detail="email" href="mailto:abdulmusthakin@gmail.com">abdulmusthakin@gmail.com</a>
+<a data-detail="github" href="https://github.com/abdulmusthakin">github/abdulmusthakin</a>
+<a data-detail="linkedin" href="https://www.linkedin.com/in/abdulmusthakin">linkedin/abdulmusthakin</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap foot">
+<div class="label">© <span id="year">2026</span> Abdul Musthakin</div>
+<nav aria-label="Footer" class="foot-links">
+<a class="foot-link" href="#introduction">Introduction</a>
+<a class="foot-link" href="#preliminaries">Preliminaries</a>
+<a class="foot-link" href="#work">Work</a>
+<a class="foot-link" href="#references">References</a>
+<a class="foot-link" href="#contact">Contact</a>
+<a class="foot-link" href="notes.html">Notes</a>
+<a class="foot-link" href="#top">Top</a>
+</nav>
+</div>
+<div class="wrap colophon label">
+<span>Set in Courier Prime and DM Mono<span id="modified"></span></span>
+<span class="qed" aria-hidden="true">∎</span>
 </div>
 </footer>
 
-</div>
+<script src="details.js"></script>
+<script>
+/* Personal details live in details.js, so this file can be replaced without losing them.
+   details.js always wins: the text written in this file only shows if scripts are off or
+   details.js is missing. A value left empty in details.js hides its link or line. */
+(function () {
+  var d = window.SITE_DETAILS;
+  if (!d) return;
+  function last(v) { return String(v || '').trim().replace(/\/+$/, '').split('/').pop().replace(/^@/, ''); }
+  var fill = {
+    email: function (a, v) { a.href = 'mailto:' + v; a.textContent = v; },
+    github: function (a, v) { v = last(v); a.href = 'https://github.com/' + encodeURIComponent(v); a.textContent = 'github/' + v; },
+    linkedin: function (a, v) { v = last(v); a.href = 'https://www.linkedin.com/in/' + encodeURIComponent(v); a.textContent = 'linkedin/' + v; },
+    cv: function (a, v) { a.href = v; }
+  };
+  var newTab = { github: 1, linkedin: 1, cv: 1 };
+  document.querySelectorAll('[data-detail]').forEach(function (a) {
+    var key = a.getAttribute('data-detail'), v = String(d[key] == null ? '' : d[key]).trim();
+    if (!v) { a.style.display = 'none'; return; }
+    fill[key](a, v);
+    if (newTab[key]) { a.target = '_blank'; a.rel = 'noopener'; }
+  });
+  // plain-text facts: an empty value hides the whole line
+  document.querySelectorAll('[data-show]').forEach(function (box) {
+    var v = String(d[box.getAttribute('data-show')] == null ? '' : d[box.getAttribute('data-show')]).trim();
+    if (!v) box.style.display = 'none';
+  });
+  document.querySelectorAll('[data-text]').forEach(function (el) {
+    var v = String(d[el.getAttribute('data-text')] == null ? '' : d[el.getAttribute('data-text')]).trim();
+    if (v) el.textContent = v;
+  });
+})();
+</script>
+
+<script>
+/* Section 3: each subsection's citations are repeated as notes in the right margin on wide screens;
+   pointing at a citation lights up its note. Built from the reference list, so they always agree. */
+(function () {
+  document.querySelectorAll('#work .sub').forEach(function (sub) {
+    var aside = null, seen = {};
+    sub.querySelectorAll('.sub-main .cite').forEach(function (c) {
+      var id = c.getAttribute('href').slice(1), ref = document.getElementById(id);
+      if (!ref || seen[id]) return; seen[id] = 1;
+      if (!aside) { aside = document.createElement('aside'); aside.className = 'sidenotes'; aside.setAttribute('aria-hidden', 'true'); sub.appendChild(aside); }
+      var n = document.createElement('p');
+      n.className = 'sidenote';
+      n.innerHTML = '<span class="key">' + ref.querySelector('.key').innerHTML + '</span> ' + ref.querySelector('.entry').innerHTML;
+      aside.appendChild(n);
+      sub.querySelectorAll('.cite[href="#' + id + '"]').forEach(function (cc) {
+        ['mouseenter', 'focus'].forEach(function (ev) { cc.addEventListener(ev, function () { n.classList.add('lit'); }); });
+        ['mouseleave', 'blur'].forEach(function (ev) { cc.addEventListener(ev, function () { n.classList.remove('lit'); }); });
+      });
+    });
+  });
+})();
+</script>
+
+<script>
+/* Top section background: a Vietoris–Rips complex on drifting points.
+   Two points within EPS of each other span an edge; three mutually within EPS span a
+   filled triangle. Visitors can change EPS with the slider and click empty space to add points. The readout gives the Betti numbers of that 2-dimensional complex:
+   b0 = connected components, b1 = independent loops not filled by triangles (over F_2). */
+(function () {
+  var canvas = document.getElementById('complex');
+  if (!canvas || !canvas.getContext) return;
+  var hero = canvas.parentElement, ctx = canvas.getContext('2d');
+  var out0 = document.getElementById('b0'), out1 = document.getElementById('b1');
+  var EPS = 118;         // px: the scale parameter of the complex (the slider changes it)
+  var MAX_ADDED = 30;    // points a visitor can add by clicking; beyond this the oldest added one goes
+  var DENSITY = 15500;   // px² of area per point
+  var SPEED = 16;        // px per second, upper bound
+  var SINK = 0.5;        // how far a point sinks into an edge of the section before bouncing
+  var FADE = 0.16;       // simplices fade in over the last FADE of EPS, so they don't pop
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var paused = document.documentElement.classList.contains('motion-paused');
+  var W = 0, H = 0, pts = [], added = [], mouse = null, raf = 0, last = 0, onScreen = true, lastBetti = -1e9;
+
+  function rand(a, b) { return a + Math.random() * (b - a); }
+  function makePoint() {
+    var ang = rand(0, Math.PI * 2), v = rand(SPEED * 0.3, SPEED);
+    return { x: rand(6, W - 6), y: rand(6, H - 6), vx: Math.cos(ang) * v, vy: Math.sin(ang) * v, r: rand(1.6, 3) };
+  }
+  function resize() {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var w = hero.clientWidth, h = hero.clientHeight;
+    if (!w || !h) return;
+    var all = pts.concat(added);
+    for (var i = 0; i < all.length; i++) { all[i].x *= w / (W || w); all[i].y *= h / (H || h); }
+    W = w; H = h;
+    canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var want = Math.max(20, Math.min(110, Math.round(W * H / DENSITY)));
+    while (pts.length < want) pts.push(makePoint());
+    pts.length = want;
+    if (still || !raf) render(performance.now());
+  }
+  function step(dt) {
+    var all = pts.concat(added);
+    for (var i = 0; i < all.length; i++) {
+      var p = all[i];
+      p.x += p.vx * dt; p.y += p.vy * dt;
+      var m = p.r * (1 - SINK);
+      if (p.x < m) { p.x = m; p.vx = Math.abs(p.vx); } else if (p.x > W - m) { p.x = W - m; p.vx = -Math.abs(p.vx); }
+      if (p.y < m) { p.y = m; p.vy = Math.abs(p.vy); } else if (p.y > H - m) { p.y = H - m; p.vy = -Math.abs(p.vy); }
+    }
+  }
+
+  /* Build the complex: returns vertices V, edges E (pairs + weight), triangles T. */
+  function build() {
+    var V = pts.concat(added);
+    if (mouse) V.push({ x: mouse.x, y: mouse.y, r: 0 });
+    var n = V.length, wgt = new Float32Array(n * n), E = [], T = [], i, j, k, d, w;
+    for (i = 0; i < n; i++) for (j = i + 1; j < n; j++) {
+      var dx = V[i].x - V[j].x, dy = V[i].y - V[j].y;
+      if (Math.abs(dx) >= EPS || Math.abs(dy) >= EPS) continue;
+      d = Math.sqrt(dx * dx + dy * dy);
+      if (d >= EPS) continue;
+      w = Math.min(1, (1 - d / EPS) / FADE);
+      wgt[i * n + j] = w; E.push([i, j, w, d]);
+    }
+    for (var e = 0; e < E.length; e++) {
+      i = E[e][0]; j = E[e][1];
+      for (k = j + 1; k < n; k++) {
+        var a = wgt[i * n + k], b = wgt[j * n + k];
+        if (a && b) T.push([i, j, k, Math.min(E[e][2], a, b)]);
+      }
+    }
+    return { V: V, E: E, T: T, n: n };
+  }
+
+  /* b0 by union–find; b1 = |E| − |V| + b0 − rank(∂₂), with the rank taken over F_2. */
+  function betti(K) {
+    var n = K.n, parent = new Int32Array(n), i, comps = n;
+    for (i = 0; i < n; i++) parent[i] = i;
+    function find(x) { while (parent[x] !== x) { parent[x] = parent[parent[x]]; x = parent[x]; } return x; }
+    var index = new Map();
+    for (i = 0; i < K.E.length; i++) {
+      index.set(K.E[i][0] * n + K.E[i][1], i);
+      var a = find(K.E[i][0]), b = find(K.E[i][1]);
+      if (a !== b) { parent[a] = b; comps--; }
+    }
+    var words = (K.E.length + 31) >> 5, pivot = new Array(K.E.length), rank = 0;
+    for (i = 0; i < K.T.length; i++) {
+      var t = K.T[i], col = new Uint32Array(words);
+      [index.get(t[0] * n + t[1]), index.get(t[0] * n + t[2]), index.get(t[1] * n + t[2])].forEach(function (e) { col[e >> 5] ^= 1 << (e & 31); });
+      for (;;) {
+        var top = -1;
+        for (var q = words - 1; q >= 0; q--) if (col[q]) { top = (q << 5) + 31 - Math.clz32(col[q]); break; }
+        if (top < 0) break;
+        if (!pivot[top]) { pivot[top] = col; rank++; break; }
+        var pv = pivot[top];
+        for (q = 0; q < words; q++) col[q] ^= pv[q];
+      }
+    }
+    return [comps, K.E.length - n + comps - rank];
+  }
+
+  function render(now) {
+    var K = build(), V = K.V, i, s;
+    ctx.clearRect(0, 0, W, H);
+    for (i = 0; i < K.T.length; i++) {
+      s = K.T[i];
+      ctx.fillStyle = 'rgba(159,22,98,' + (0.3 * s[3]).toFixed(3) + ')';
+      ctx.beginPath(); ctx.moveTo(V[s[0]].x, V[s[0]].y); ctx.lineTo(V[s[1]].x, V[s[1]].y); ctx.lineTo(V[s[2]].x, V[s[2]].y); ctx.closePath(); ctx.fill();
+    }
+    // shorter edges are brighter, and better-connected points are larger and brighter, so clusters read as structure
+    var deg = new Uint8Array(V.length);
+    ctx.lineWidth = 1;
+    for (i = 0; i < K.E.length; i++) {
+      s = K.E[i]; deg[s[0]]++; deg[s[1]]++;
+      ctx.strokeStyle = 'rgba(247,191,212,' + (0.4 * s[2] * (0.35 + 0.65 * (1 - s[3] / EPS))).toFixed(3) + ')';
+      ctx.beginPath(); ctx.moveTo(V[s[0]].x, V[s[0]].y); ctx.lineTo(V[s[1]].x, V[s[1]].y); ctx.stroke();
+    }
+    for (i = 0; i < V.length; i++) {
+      if (!V[i].r) continue;
+      var k = Math.min(deg[i], 5);
+      ctx.fillStyle = 'rgba(247,191,212,' + (0.5 + 0.1 * k).toFixed(2) + ')';
+      ctx.beginPath(); ctx.arc(V[i].x, V[i].y, V[i].r * (1 + 0.12 * k), 0, Math.PI * 2); ctx.fill();
+    }
+    if (out0 && now - lastBetti > 220) {
+      lastBetti = now;
+      var b = betti(K);
+      out0.textContent = b[0]; out1.textContent = b[1];
+    }
+  }
+  function frame(t) {
+    var dt = Math.min((t - last) / 1000, 0.05); last = t;
+    step(dt); render(t);
+    raf = requestAnimationFrame(frame);
+  }
+  function start() { if (!raf && !still && !paused && onScreen && !document.hidden) { last = performance.now(); raf = requestAnimationFrame(frame); } }
+  function stop() { if (raf) { cancelAnimationFrame(raf); raf = 0; } }
+  // with nothing animating (paused, or reduced motion), anything that changes the complex redraws it
+  // and its readout itself: once per frame at most, however fast the events come
+  var redrawQueued = 0;
+  function redrawIfStill() {
+    if (redrawQueued || !(still || !raf)) return;
+    redrawQueued = requestAnimationFrame(function () {
+      redrawQueued = 0;
+      if (still || !raf) { lastBetti = -1e9; render(performance.now()); }
+    });
+  }
+
+  // the cursor is a vertex of the complex, so moving it redraws even while paused
+  hero.addEventListener('pointermove', function (e) {
+    if (e.pointerType === 'touch') return;
+    var b = canvas.getBoundingClientRect();
+    mouse = { x: e.clientX - b.left, y: e.clientY - b.top };
+    redrawIfStill();
+  });
+  function clearMouse() { mouse = null; redrawIfStill(); }
+  hero.addEventListener('pointerleave', clearMouse);
+  hero.addEventListener('pointercancel', clearMouse);
+
+  // the slider sets the scale of the complex
+  var slider = document.getElementById('eps'), sliderOut = document.getElementById('eps-val');
+  if (slider) slider.addEventListener('input', function () {
+    EPS = +slider.value;
+    if (sliderOut) sliderOut.textContent = slider.value;
+    redrawIfStill();
+  });
+  // a click on empty space in the section drops a new point there
+  var EMPTY = ['hero', 'hero-inner', 'hero-text', 'cta'];
+  hero.classList.add('can-add');
+  hero.addEventListener('click', function (e) {
+    var t = e.target, empty = t === canvas || EMPTY.some(function (c) { return t.classList && t.classList.contains(c); });
+    var menu = document.getElementById('site-nav');
+    if (!empty || (menu && menu.classList.contains('open'))) return;   // a tap that only closes the phone menu adds nothing
+    var b = canvas.getBoundingClientRect(), p = makePoint();
+    p.x = e.clientX - b.left; p.y = e.clientY - b.top;
+    added.push(p);
+    if (added.length > MAX_ADDED) added.shift();
+    redrawIfStill();
+  });
+  document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
+  document.addEventListener('am-motion', function (e) { paused = e.detail; paused ? stop() : start(); });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) { onScreen = es[0].isIntersecting; onScreen ? start() : stop(); }).observe(hero);
+  }
+  if ('ResizeObserver' in window) new ResizeObserver(resize).observe(hero); else window.addEventListener('resize', resize);
+  resize(); start();
+})();
+</script>
+
+<script>
+/* The diagram beside the name: one is chosen at random each time the page loads, never the
+   same one twice running. Each is described by nodes on a grid and arrows between them; the
+   arrows are fitted to the measured size of the labels, so they stay correct in any font.
+   Label markup: *x* italic, _{..} subscript, ^{..} superscript. */
+(function () {
+  var svg = document.getElementById('diagram');
+  if (!svg) return;
+  var NS = 'http://www.w3.org/2000/svg', SIZE = 20;
+  var titleEl = document.getElementById('diagram-title');
+  var L = 84, R = 276, T = 52, B = 178;      // grid for the square diagrams, in viewBox units
+
+  var DIAGRAMS = [
+    { title: 'van Kampen, as a pushout',
+      nodes: { a: [L, T, 'π_{1}(*U* ∩ *V*)'], b: [R, T, 'π_{1}(*U*)'], c: [L, B, 'π_{1}(*V*)'], d: [R, B, 'π_{1}(*X*)'] },
+      arrows: [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd']],
+      corner: { type: 'pushout', at: 'd', from: 'a' } },
+    { title: 'The fibre product, as a pullback',
+      nodes: { a: [L, T, '*X*\u2009 ×_{*S*} *Y*'], b: [R, T, '*X*'], c: [L, B, '*Y*'], d: [R, B, '*S*'] },
+      arrows: [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd']],
+      corner: { type: 'pullback', at: 'a', from: 'd' } },
+    { title: 'The universal property of sheafification',
+      nodes: { a: [L, T, 'ℱ'], b: [R, T, 'ℱ^{+}'], d: [R, B, '𝒢'] },
+      arrows: [['a', 'b', { label: '*θ*', side: -1 }], ['a', 'd', { label: '*φ*', side: 1 }], ['b', 'd', { label: '∃!', side: -1, dashed: true }]] },
+    { title: 'The exterior derivative is natural',
+      nodes: { a: [L, T, 'Ω^{*k*}(*N*)'], b: [R, T, 'Ω^{*k*+1}(*N*)'], c: [L, B, 'Ω^{*k*}(*M*)'], d: [R, B, 'Ω^{*k*+1}(*M*)'] },
+      arrows: [['a', 'b', { label: 'd', side: -1 }], ['c', 'd', { label: 'd', side: 1 }], ['a', 'c', { label: '*f*^{∗}', side: 1 }], ['b', 'd', { label: '*f*^{∗}', side: -1 }]] },
+    { title: 'The Hopf fibration',
+      nodes: { a: [56, 76, '*S*^{1}'], b: [180, 76, '*S*^{3}'], c: [304, 76, '*S*^{2}'], z: [180, 160, 'π_{3}(*S*^{2}) ≅ π_{3}(*S*^{3}) ≅ ℤ'] },
+      arrows: [['a', 'b', { hook: true }], ['b', 'c', { label: '*p*', side: -1 }]] }
+  ];
+
+  function el(name, attrs) { var e = document.createElementNS(NS, name); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+
+  /* Turn label markup into a <text> element centred on (x, y). */
+  function label(src, x, y, size) {
+    var text = el('text', { x: x, y: y + size * 0.33, 'text-anchor': 'middle', 'font-size': size });
+    var italic = false, shift = 0, pending = 0, buf = '', level = 0;   // shift: current baseline offset
+    function flush() {
+      if (!buf) return;
+      var t = el('tspan', {});
+      if (italic) t.setAttribute('font-style', 'italic');
+      if (level) t.setAttribute('font-size', size * 0.7);
+      if (pending) { t.setAttribute('dy', pending); pending = 0; }
+      t.textContent = buf; buf = ''; text.appendChild(t);
+    }
+    function move(to) { flush(); pending += to - shift; shift = to; }
+    for (var i = 0; i < src.length; i++) {
+      var ch = src[i];
+      if (ch === '*') { flush(); italic = !italic; }
+      else if ((ch === '_' || ch === '^') && src[i + 1] === '{') { move(ch === '_' ? size * 0.26 : -size * 0.4); level = 1; i++; }
+      else if (ch === '}' && level) { move(0); level = 0; }
+      else buf += ch;
+    }
+    flush();
+    return text;
+  }
+
+  /* Where the segment from the anchor of box r towards (tx, ty) leaves the box. */
+  function exit(r, tx, ty) {
+    var dx = tx - r.cx, dy = ty - r.cy;
+    var sx = dx > 0 ? (r.x1 - r.cx) / dx : dx < 0 ? (r.x0 - r.cx) / dx : Infinity;
+    var sy = dy > 0 ? (r.y1 - r.cy) / dy : dy < 0 ? (r.y0 - r.cy) / dy : Infinity;
+    var s = Math.min(sx, sy);
+    return [r.cx + dx * s, r.cy + dy * s];
+  }
+
+  function draw(D, animate) {
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    var boxes = {}, k, nodeTexts = [], arrows = [], cornerEl = null;
+    for (k in D.nodes) {
+      var n = D.nodes[k], t = label(n[2], n[0], n[1], SIZE);
+      svg.appendChild(t); nodeTexts.push(t);
+      var bb = t.getBBox();
+      // arrows aim at the node's grid point and stop at the label's measured extent plus padding
+      boxes[k] = { cx: n[0], cy: n[1], x0: bb.x - 10, x1: bb.x + bb.width + 10, y0: bb.y - 4, y1: bb.y + bb.height + 4 };
+    }
+    var g = el('g', { fill: 'none', stroke: '#f7bfd4', 'stroke-width': 1.2, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' });
+    svg.appendChild(g);
+    (D.arrows || []).forEach(function (a) {
+      var from = boxes[a[0]], to = boxes[a[1]], o = a[2] || {};
+      var p = exit(from, to.cx, to.cy), q = exit(to, from.cx, from.cy);
+      var ang = Math.atan2(q[1] - p[1], q[0] - p[0]), ux = Math.cos(ang), uy = Math.sin(ang);
+      var shaft = el('path', { d: 'M' + p[0] + ' ' + p[1] + ' L' + q[0] + ' ' + q[1] }), parts = { shaft: shaft, rest: [], dashed: !!o.dashed };
+      arrows.push(parts);
+      if (o.dashed) shaft.setAttribute('stroke-dasharray', '5 5');
+      g.appendChild(shaft);
+      // head: an open V at q
+      var hl = 8, hw = 4.2;
+      parts.rest.push(g.appendChild(el('path', { d: 'M' + (q[0] - ux * hl - uy * hw) + ' ' + (q[1] - uy * hl + ux * hw) + ' L' + q[0] + ' ' + q[1] + ' L' + (q[0] - ux * hl + uy * hw) + ' ' + (q[1] - uy * hl - ux * hw) })));
+      // hooked tail for an inclusion
+      if (o.hook) parts.rest.push(g.appendChild(el('path', { d: 'M' + p[0] + ' ' + p[1] + ' A4 4 0 0 1 ' + (p[0] + uy * 8) + ' ' + (p[1] - ux * 8) + '' })));
+      if (o.label) {
+        var mx = (p[0] + q[0]) / 2, my = (p[1] + q[1]) / 2, off = 15 * (o.side || 1);
+        // side 1 puts the label below a → arrow and left of a ↓ arrow; side -1 the opposite
+        parts.rest.push(svg.appendChild(label(o.label, mx - uy * off, my + ux * off, SIZE * 0.82)));
+      }
+    });
+    if (D.corner) {
+      var at = D.nodes[D.corner.at], fr = D.nodes[D.corner.from];
+      var cx = at[0] + (fr[0] - at[0]) * 0.27, cy = at[1] + (fr[1] - at[1]) * 0.27, s = 11;
+      var d = D.corner.type === 'pushout'
+        ? 'M' + cx + ' ' + (cy + s) + ' V' + cy + ' H' + (cx + s)     // ⌜ opening towards the pushout
+        : 'M' + (cx - s) + ' ' + cy + ' H' + cx + ' V' + (cy - s);    // ⌟ opening towards the pullback
+      cornerEl = svg.appendChild(el('path', { d: d, fill: 'none', stroke: '#f280b2', 'stroke-width': 1.4 }));
+    }
+    // arrival: the objects fade in, then each arrow draws itself from source to target, then the corner mark
+    if (animate && svg.animate) {
+      nodeTexts.forEach(function (t) { t.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 500, easing: 'ease-out', fill: 'backwards' }); });
+      var at = 380, DUR = 620, STEP = 170;
+      arrows.forEach(function (a, i) {
+        var delay = at + i * STEP, L = a.shaft.getTotalLength();
+        if (a.dashed) a.shaft.animate([{ opacity: 0 }, { opacity: 1 }], { duration: DUR, delay: delay, fill: 'backwards' });
+        else a.shaft.animate([{ strokeDasharray: L + ' ' + L, strokeDashoffset: L }, { strokeDasharray: L + ' ' + L, strokeDashoffset: 0 }],
+                             { duration: DUR, delay: delay, easing: 'cubic-bezier(.65,0,.35,1)', fill: 'backwards' });
+        a.rest.forEach(function (e) { e.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 260, delay: delay + DUR - 160, fill: 'backwards' }); });
+      });
+      var end = at + Math.max(arrows.length - 1, 0) * STEP + DUR;
+      if (cornerEl) cornerEl.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 400, delay: end, fill: 'backwards' });
+      drawnUntil = performance.now() + end + 400;
+    }
+  }
+  var drawnUntil = 0;
+
+  var current = 0;
+  function show(i, animate) {
+    current = (i + DIAGRAMS.length) % DIAGRAMS.length;
+    titleEl.textContent = 'Fig. 1 — ' + DIAGRAMS[current].title;
+    draw(DIAGRAMS[current], animate);
+  }
+  // pick at random, avoiding whichever was shown on the previous load
+  var KEY = 'am-diagram', prev = -1;
+  try { prev = parseInt(window.localStorage.getItem(KEY), 10); } catch (e) {}
+  var pick = Math.floor(Math.random() * DIAGRAMS.length);
+  if (pick === prev) pick = (pick + 1 + Math.floor(Math.random() * (DIAGRAMS.length - 1))) % DIAGRAMS.length;
+  try { window.localStorage.setItem(KEY, String(pick)); } catch (e) {}
+  show(pick);
+  // draw it in as the figure fades up (once the fonts are in, since the labels are measured);
+  // skipped when motion is reduced or paused
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.classList.contains('motion-paused');
+  var drawIn = function () { if (drawIn.done) return; drawIn.done = true; draw(DIAGRAMS[current], !calm); };
+  var t0 = performance.now();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { setTimeout(drawIn, Math.max(0, 650 - (performance.now() - t0))); });
+  setTimeout(drawIn, 1400);
+  // labels are measured, so lay out again if a font arrives later (without interrupting the drawing)
+  if (document.fonts) {
+    var again = 0;
+    var relayout = function () {
+      clearTimeout(again);
+      again = setTimeout(function () { if (!drawIn.done) return; draw(DIAGRAMS[current]); }, Math.max(60, drawnUntil - performance.now()));
+    };
+    if (document.fonts.addEventListener) document.fonts.addEventListener('loadingdone', relayout);
+    // fetch the faces the later diagrams need (italic Greek, script letters) before they are shown
+    if (document.fonts.load) ['20px "STIX Two Text"', 'italic 20px "STIX Two Text"', '20px "AM Math"'].forEach(function (f) { try { document.fonts.load(f, 'θφπΩ∩ℱ'); } catch (e) {} });
+  }
+  // printing mid-arrival prints the finished figure
+  window.addEventListener('beforeprint', function () { if (svg.getAnimations) svg.getAnimations({ subtree: true }).forEach(function (an) { an.finish(); }); });
+})();
+</script>
+
+<script>
+/* Header: transparent over the top section, solid bar once you scroll; phone menu toggle. */
+(function () {
+  var nav = document.getElementById('site-nav');
+  if (!nav) return;
+  function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 60); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  var btn = nav.querySelector('.menu-btn');
+  function setOpen(open) { nav.classList.toggle('open', open); btn.setAttribute('aria-expanded', open ? 'true' : 'false'); btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); }
+  btn.addEventListener('click', function () { setOpen(!nav.classList.contains('open')); });
+  nav.querySelectorAll('.nav-links a').forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.classList.contains('open')) { setOpen(false); btn.focus(); } });
+  document.addEventListener('click', function (e) { if (nav.classList.contains('open') && !nav.contains(e.target)) setOpen(false); });
+  window.addEventListener('resize', function () { if (window.innerWidth > 900) setOpen(false); });
+  // pause / resume the moving parts
+  var mbtn = document.getElementById('motion');
+  function showMotion() {
+    var p = document.documentElement.classList.contains('motion-paused');
+    if (!mbtn) return;
+    mbtn.setAttribute('aria-pressed', p ? 'true' : 'false');
+    mbtn.querySelector('.motion-label').textContent = p ? 'Resume' : 'Pause';
+    mbtn.setAttribute('aria-label', p ? 'Resume the animation' : 'Pause the animation');
+    mbtn.title = p ? 'Resume the animation' : 'Pause the animation';
+  }
+  if (mbtn) {
+    showMotion();
+    mbtn.addEventListener('click', function () {
+      var p = !document.documentElement.classList.contains('motion-paused');
+      document.documentElement.classList.toggle('motion-paused', p);
+      try { localStorage.setItem('am-motion', p ? 'paused' : 'running'); } catch (e) {}
+      document.dispatchEvent(new CustomEvent('am-motion', { detail: p }));
+      showMotion();
+    });
+  }
+  // light up the header link of the section being read
+  var links = {};
+  nav.querySelectorAll('.nav-links a[href^="#"]').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+  // one underline that slides from link to link as you move between sections
+  var bar = nav.querySelector('.nav-indicator'), currentId = null;
+  function placeBar(animate) {
+    if (!bar) return;
+    var a = currentId && links[currentId];
+    if (!a || !a.offsetWidth) { bar.style.opacity = '0'; return; }
+    if (!animate) bar.classList.add('no-anim');
+    bar.style.left = a.offsetLeft + 'px';
+    bar.style.width = a.offsetWidth + 'px';
+    bar.style.top = (a.offsetTop + a.offsetHeight - 9) + 'px';
+    bar.style.opacity = '1';
+    if (!animate) { void bar.offsetWidth; bar.classList.remove('no-anim'); }
+  }
+  window.addEventListener('resize', function () { placeBar(false); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { placeBar(false); });
+  function mark(id) {
+    if (id === currentId) return;
+    var wasHidden = !currentId;
+    currentId = id;
+    for (var k in links) { links[k].classList.toggle('active', k === id); if (k === id) links[k].setAttribute('aria-current', 'location'); else links[k].removeAttribute('aria-current'); }
+    placeBar(!wasHidden);   // appears in place the first time, slides after that
+  }
+  // the section being read is the last one whose top has passed a reading line, 40% of the way down
+  // the window; near the end of the page the line slides down to the bottom edge, so the last
+  // sections take their turn even when they are too short to reach 40%
+  var ids = Object.keys(links), pending = false;
+  function pick() {
+    pending = false;
+    if (held) return;
+    var vh = window.innerHeight, left = document.documentElement.scrollHeight - vh - window.scrollY;
+    var line = Math.max(vh * 0.4, vh - left), id = null;
+    ids.forEach(function (k) { var s = document.getElementById(k); if (s && s.getBoundingClientRect().top <= line) id = k; });
+    mark(id);
+  }
+  function schedule() { if (!held && !pending) { pending = true; requestAnimationFrame(pick); } }
+  // Following a link: the bar goes straight to the destination's section as you click, and stays
+  // there while the page glides down, rather than stepping through every section on the way. It
+  // is handed back to the reading line once the glide has finished and you scroll yourself, or at
+  // once if you take over mid-glide.
+  var held = false, settled = false, settle = 0;
+  function waitToSettle(ms) { clearTimeout(settle); settle = setTimeout(function () { settled = true; }, ms); }
+  function hold(id) { held = true; settled = false; mark(id); waitToSettle(200); }
+  function release() { if (!held) return; held = false; clearTimeout(settle); schedule(); }
+  window.addEventListener('scroll', function () {
+    if (!held) schedule();
+    else if (settled) release();       // the glide is over: this scroll is the reader's own
+    else waitToSettle(150);            // still gliding
+  }, { passive: true });
+  window.addEventListener('wheel', release, { passive: true });
+  window.addEventListener('touchstart', release, { passive: true });
+  window.addEventListener('keydown', function (e) { if (/^(Arrow(Up|Down)|Page(Up|Down)|Home|End| )$/.test(e.key)) release(); });
+  window.addEventListener('resize', schedule);
+  // the header section a link leads into: the section itself, or the one containing its target
+  function sectionOf(id) {
+    var t = id && document.getElementById(id);
+    if (!t) return undefined;
+    var s = t.closest('section[id]');
+    return s && links[s.id] ? s.id : null;
+  }
+  pick();
+  // a subsection or reference reached from a link here glows briefly, then fades
+  function flash(id) {
+    var t = id && document.getElementById(id);
+    if (!t || !(t.classList.contains('sub') || t.parentNode.classList.contains('refs'))) return;
+    t.classList.remove('flash'); void t.offsetWidth; t.classList.add('flash');
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var id = a.getAttribute('href').slice(1), sec = sectionOf(id);
+    if (sec !== undefined) hold(sec);
+    flash(id);
+  });
+  document.addEventListener('animationend', function (e) { if (e.animationName === 'flash') e.target.classList.remove('flash'); });
+  if (location.hash) flash(location.hash.slice(1));
+  var year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
+  var mod = document.getElementById('modified'), when = new Date(document.lastModified);
+  if (mod && !isNaN(when)) mod.textContent = ' · Last revised ' + when.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+})();
+
+/* Typing line under the name: types a phrase, holds, deletes it, moves to the next. */
+(function () {
+  var el = document.getElementById('typed');
+  if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var PHRASES = [            // edit this list to change what gets typed
+    'Mathematics undergraduate',
+    'Algebraic topology',
+    'Differential topology',
+    'Algebraic geometry',
+    'Mathematical physics'
+  ];
+  var TYPE = 70, ERASE = 35, HOLD = 1900, GAP = 400;   // milliseconds
+  var which = 0, shown = PHRASES[0].length, erasing = true;
+  // keep room for the tallest phrase at the current width, so the buttons below never jump
+  var role = el.parentNode, queued = 0;
+  function reserve() {
+    queued = 0;
+    var keep = el.textContent, h = 0;
+    role.style.minHeight = '';
+    PHRASES.forEach(function (p) { el.textContent = p; h = Math.max(h, role.getBoundingClientRect().height); });
+    el.textContent = keep;
+    role.style.minHeight = h + 'px';
+  }
+  reserve();
+  window.addEventListener('resize', function () { if (!queued) queued = requestAnimationFrame(reserve); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(reserve);
+  function tick() {
+    var phrase = PHRASES[which], wait;
+    if (document.documentElement.classList.contains('motion-paused')) {
+      shown = phrase.length; erasing = true; el.textContent = phrase;
+      setTimeout(tick, 400); return;
+    }
+    if (erasing) {
+      shown--; wait = ERASE;
+      if (shown === 0) { erasing = false; which = (which + 1) % PHRASES.length; wait = GAP; }
+    } else {
+      shown++; wait = TYPE;
+      if (shown === phrase.length) { erasing = true; wait = HOLD; }
+    }
+    el.textContent = phrase.slice(0, shown);
+    setTimeout(tick, wait);
+  }
+  setTimeout(tick, HOLD);
+})();
+</script>
 </body>
 </html>
