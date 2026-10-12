@@ -15,6 +15,8 @@
     document.addEventListener('click', function (e) { if (nav.classList.contains('open') && !nav.contains(e.target)) setOpen(false); });
     window.addEventListener('resize', function () { if (window.innerWidth > 900) setOpen(false); });
   }
+  // links to other sites open in a new tab
+  document.querySelectorAll('a[href^="http"]').forEach(function (a) { if (a.host !== location.host) { a.target = '_blank'; a.rel = 'noopener'; } });
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
   var mod = document.getElementById('modified'), when = new Date(document.lastModified);

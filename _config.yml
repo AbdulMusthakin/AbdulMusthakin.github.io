@@ -6,3 +6,4 @@ exclude:
   - note-template.html
   - README.md
   - drafted-text.md
+  - CLAUDE.md

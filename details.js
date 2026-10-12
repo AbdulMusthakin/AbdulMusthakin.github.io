@@ -8,6 +8,8 @@ window.SITE_DETAILS = {
   cv: "CV_AM_public.pdf",         // file name of a CV uploaded next to index.html, e.g. "cv.pdf"
 
   modules: "ST121 Statistical Laboratory, PH136 Logic 1: Introduction to Symbolic Logic, CS141 Functional Programming",   // optional modules, shown under Warwick in section 2
-  reading: "",      // what you are on right now, shown at the top of section 3, e.g. "Hatcher, section 2.1"
-  readingDate: ""   // when you last updated that line, e.g. "October 2026"
+  // what you are on right now, shown at the top of section 3; several texts go in one line, separated by " · "
+  // e.g. "Hatcher, ch. 2 · Bott–Tu, ch. 2". Replace each [N] with the chapter you are on.
+  reading: "Hatcher, ch. 2 · Bott–Tu, ch. 1 · Reid, ch. 1 · Casella–Berger, ch. 1",
+  readingDate: "October 2026"   // when you last updated that line, e.g. "October 2026"
 };
