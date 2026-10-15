@@ -60,6 +60,8 @@ studies and links to his writing.
 - `drafted-text.md`: earlier drafted wording, kept for reference and not published.
 - `fonts/`: self-hosted fonts with their OFL licences. `am-math.woff` is an 11-glyph subset of STIX Two
   Math (ℤ ℱ ← → ∃ ∎ ∗ ∩ ≅ ⊕ 𝒢). A new symbol in a diagram needs a font that contains it.
+- `favicon.ico`, `favicon.svg`, `apple-touch-icon.png`: the site icon, linked from every page. Google
+  only shows an icon it can fetch as a real file, and wants its address to stay the same: keep these names.
 - `preview.png`: the link-preview image (`og:image`). `sitemap.xml` and `robots.txt` are for search
   engines.
 - `CV_AM_public.pdf`: the public CV. Never publish a CV with a phone number or home address.
