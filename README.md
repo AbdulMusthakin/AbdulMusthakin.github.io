@@ -1,1 +1,4 @@
 # AbdulMusthakin.github.io
+This is my personal website, primarily intended to host all information publicly available about myself. This involves listing details of my education, both formal and independent study, mostly of mathematics. Within this website are found any (currently only expository) papers written by me, as well as links for correspondence.
+
+As a disclaimer, the code for this website was almost entirely created using Claude (Anthropic), though the text and any attached papers are entirely my own work. The existence of this site does not indicate my views on the usage of LLMs for any purpose besides that which is present here.

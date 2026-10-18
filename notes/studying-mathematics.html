@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology for Studying Mathematics · Abdul Musthakin</title>
+<meta name="description" content="How and why Abdul Musthakin studies mathematics as he does, with an example from sheaf cohomology.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Methodology for Studying Mathematics · Abdul Musthakin">
+<meta property="og:description" content="How and why Abdul Musthakin studies mathematics as he does, with an example from sheaf cohomology.">
+<meta property="og:url" content="https://abdulmusthakin.github.io/notes/studying-mathematics.html">
+<meta property="og:image" content="https://abdulmusthakin.github.io/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.ico" sizes="32x32">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="theme-color" content="#0d0307">
+<meta name="color-scheme" content="dark">
+<link rel="preload" href="../fonts/dm-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../site.css">
+<!-- KaTeX typesets the mathematics -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+</head>
+<body class="note-page article-page">
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="site-nav" class="site-nav sub-nav">
+<nav aria-label="Primary" class="wrap nav-inner">
+<a class="brand" href="../index.html">AM</a>
+<button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+<div id="nav-links" class="nav-links">
+<a class="nav-link" href="../index.html#introduction">Introduction</a>
+<a class="nav-link" href="../index.html#preliminaries">Preliminaries</a>
+<a class="nav-link" href="../index.html#work">Work</a>
+<a class="nav-link" href="../index.html#references">References</a>
+<a class="nav-link" href="../index.html#contact">Contact</a>
+<span class="nav-sep" aria-hidden="true"></span>
+<a class="nav-link current" href="../notes.html">Notes</a>
+</div>
+</nav>
+</header>
+<main id="main" class="page-narrow" tabindex="-1">
+
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="../index.html">home</a><span aria-hidden="true">/</span><a href="../notes.html">notes</a><span aria-hidden="true">/</span><a href="articles.html">articles</a><span aria-hidden="true">/</span><span aria-current="page">studying-mathematics</span>
+</nav>
+
+<div class="label">On Learning</div>
+<h1>Methodology for Studying Mathematics</h1>
+<div class="label dateline">October&nbsp;2026<span class="read-time" data-read-time></span></div>
+
+<div class="abstract">
+<p>A description and justification of the way I study mathematics. To serve as advice is not its primary purpose, but I hope it will serve some as such.</p>
+</div>
+
+<p>I have only recently started my undergraduate study of mathematics, and thus most of the maths I have studied so far has been outside formal education and syllabi. Such a path certainly offers more freedom with regard to what one may explore, but it also carries risks. I would recommend a more normal path to most people.</p>
+
+<p>But there are many people in the world who decide to self-study maths, whether it is their only way to learn or otherwise. For such people, perhaps an article of this nature will prove useful, but that is not its intended purpose. Simply, I wish to explain myself.</p>
+
+<hr class="break">
+
+<p>When confronted with mathematics unfamiliar to me, there are usually two ways I can approach it. One is to open a textbook, read through the chapters, and complete the exercises. This is not a poor way to learn. In fact, there are many situations in which it is optimal; for rigorous study, I doubt there are better sources. However, it is not what I prefer for exposure to new ideas.</p>
+
+<p>The other way to approach unfamiliar maths is through continual exposure, to envelop an idea within intuition until it appears to be little more than the obvious awaiting due formality. And I believe that intuition can be found for even the most abstract-seeming concepts. To illustrate, let us consider an example, taken from an <a href="https://math.stackexchange.com/q/2642262">answer</a> on the Mathematics Stack Exchange to a question about intuition for sheaves <a class="cite" href="#ref-hem">[Hem]</a>.</p>
+
+<p>Let $g \colon U \to \mathbb{C}$ be a nowhere-vanishing holomorphic function on an open subset $U \subseteq \mathbb{C}$. We ask whether we can write $g = e^f$ for some holomorphic function $f \colon U \to \mathbb{C}$. We cannot always. This can be seen by considering the case where $U = \mathbb{C}^*$ and $g = \operatorname{id}$, where our function $f$ would need to be a holomorphic logarithm on all of $\mathbb{C}^*$, which does not exist (Fig.&nbsp;1).</p>
+
+<p>However, if $U = \mathbb{C}$, then we can always find such a function $f$. It is obvious that we can locally, by choosing a branch of the logarithm and setting $f = \log g$. The problem we have is thus global, and it is solved by sheaf cohomology.</p>
+
+<figure class="art-fig">
+<div class="scroll"><div class="art" aria-hidden="true">
+<svg viewBox="0 0 420 318">
+<path class="lens" d="M295.9 199.8 L295.5 199.9 L295.1 199.9 L294.6 199.9 L294.2 200 L293.7 200 L293.3 200 L292.9 200 L292.4 200 L292 200 L291.6 200 L291.1 200 L290.7 200 L290.3 200 L289.8 200 L289.4 199.9 L288.9 199.9 L288.5 199.9 L288.1 199.8 L287.6 199.8 L287.2 199.8 L286.8 199.7 L286.3 199.7 L285.9 199.6 L285.5 199.6 L285 199.5 L284.6 199.5 L284.2 199.4 L283.7 199.3 L283.3 199.2 L282.9 199.2 L282.5 199.1 L282 199 L281.6 198.9 L281.2 198.8 L280.8 198.7 L280.3 198.6 L279.9 198.5 L279.5 198.4 L279.1 198.3 L278.6 198.2 L278.2 198.1 L277.8 197.9 L277.4 197.8 L277 197.7 L276.5 197.6 L276.1 197.4 L275.7 197.3 L275.3 197.1 L274.9 197 L274.5 196.8 L274.1 196.7 L273.7 196.5 L273.3 196.4 L272.9 196.2 L272.5 196 L272.1 195.9 L271.7 195.7 L271.3 195.5 L270.9 195.3 L270.5 195.1 L270.1 194.9 L269.7 194.7 L269.3 194.6 L268.9 194.4 L268.5 194.1 L268.1 193.9 L267.8 193.7 L267.4 193.5 L267 193.3 L266.6 193.1 L266.2 192.9 L265.9 192.6 L265.5 192.4 L265.1 192.2 L264.8 191.9 L264.4 191.7 L264 191.5 L263.7 191.2 L263.3 191 L263 190.7 L262.6 190.5 L262.3 190.2 L261.9 189.9 L261.6 189.7 L261.2 189.4 L260.9 189.1 L260.5 188.9 L260.2 188.6 L259.9 188.3 L259.5 188 L259.2 187.7 L258.9 187.4 L258.5 187.2 L258.2 186.9 L257.9 186.6 L257.6 186.3 L257.3 186 L257 185.7 L256.6 185.4 L256.3 185 L256 184.7 L255.7 184.4 L255.4 184.1 L255.1 183.8 L254.8 183.5 L254.6 183.1 L254.3 182.8 L254 182.5 L253.7 182.1 L253.4 181.8 L253.1 181.5 L252.9 181.1 L252.6 180.8 L252.3 180.4 L252.1 180.1 L251.8 179.7 L251.5 179.4 L251.3 179 L251 178.7 L250.8 178.3 L250.5 178 L250.3 177.6 L250.1 177.2 L249.8 176.9 L249.6 176.5 L249.4 176.1 L249.1 175.8 L248.9 175.4 L248.7 175 L248.5 174.6 L248.3 174.2 L248.1 173.9 L247.9 173.5 L247.6 173.1 L247.4 172.7 L247.3 172.3 L247.1 171.9 L246.9 171.5 L247.1 171.2 L247.5 171.1 L247.9 171.1 L248.4 171.1 L248.8 171.1 L249.3 171 L249.7 171 L250.1 171 L250.6 171 L251 171 L251.4 171 L251.9 171 L252.3 171 L252.7 171 L253.2 171.1 L253.6 171.1 L254.1 171.1 L254.5 171.1 L254.9 171.2 L255.4 171.2 L255.8 171.2 L256.2 171.3 L256.7 171.3 L257.1 171.4 L257.5 171.4 L258 171.5 L258.4 171.6 L258.8 171.6 L259.3 171.7 L259.7 171.8 L260.1 171.9 L260.5 171.9 L261 172 L261.4 172.1 L261.8 172.2 L262.2 172.3 L262.7 172.4 L263.1 172.5 L263.5 172.6 L263.9 172.7 L264.4 172.8 L264.8 173 L265.2 173.1 L265.6 173.2 L266 173.3 L266.5 173.5 L266.9 173.6 L267.3 173.7 L267.7 173.9 L268.1 174 L268.5 174.2 L268.9 174.3 L269.3 174.5 L269.7 174.7 L270.1 174.8 L270.5 175 L270.9 175.2 L271.3 175.3 L271.7 175.5 L272.1 175.7 L272.5 175.9 L272.9 176.1 L273.3 176.3 L273.7 176.5 L274.1 176.7 L274.5 176.9 L274.9 177.1 L275.2 177.3 L275.6 177.5 L276 177.7 L276.4 177.9 L276.8 178.2 L277.1 178.4 L277.5 178.6 L277.9 178.8 L278.2 179.1 L278.6 179.3 L279 179.6 L279.3 179.8 L279.7 180.1 L280 180.3 L280.4 180.6 L280.7 180.8 L281.1 181.1 L281.4 181.3 L281.8 181.6 L282.1 181.9 L282.5 182.2 L282.8 182.4 L283.1 182.7 L283.5 183 L283.8 183.3 L284.1 183.6 L284.5 183.9 L284.8 184.2 L285.1 184.4 L285.4 184.7 L285.7 185 L286 185.4 L286.4 185.7 L286.7 186 L287 186.3 L287.3 186.6 L287.6 186.9 L287.9 187.2 L288.2 187.6 L288.4 187.9 L288.7 188.2 L289 188.5 L289.3 188.9 L289.6 189.2 L289.9 189.5 L290.1 189.9 L290.4 190.2 L290.7 190.6 L290.9 190.9 L291.2 191.3 L291.5 191.6 L291.7 192 L292 192.3 L292.2 192.7 L292.5 193.1 L292.7 193.4 L292.9 193.8 L293.2 194.1 L293.4 194.5 L293.6 194.9 L293.9 195.3 L294.1 195.6 L294.3 196 L294.5 196.4 L294.7 196.8 L294.9 197.2 L295.1 197.5 L295.4 197.9 L295.6 198.3 L295.7 198.7 L295.9 199.1 L296.1 199.5 Z"/>
+<circle class="disc" cx="292" cy="150" r="50"/>
+<circle class="disc" cx="251" cy="79" r="50"/>
+<circle class="disc" cx="169" cy="79" r="50"/>
+<circle class="disc" cx="128" cy="150" r="50"/>
+<circle class="disc" cx="169" cy="221" r="50"/>
+<circle class="disc" cx="251" cy="221" r="50"/>
+<path class="turn" d="M192.8 158 L193.6 159.5 L194.5 161 L195.6 162.3 L196.7 163.6 L198 164.7 L199.4 165.8 L200.8 166.6 L202.4 167.4 L204 168 L205.6 168.5 L207.3 168.8 L209 169 L210.7 169 L212.4 168.8 L214.1 168.5 L215.8 168.1 L217.4 167.5 L218.9 166.8 L220.4 165.9 L221.8 164.9 L223.1 163.8 L224.3 162.5 L225.3 161.2 L226.3 159.8 L227.1 158.3 L227.8 156.7 L228.3 155.1 L228.7 153.4 L228.9 151.7 L229 150 L228.9 148.3 L228.7 146.6 L228.3 144.9 L227.8 143.3 L227.1 141.7 L226.3 140.2 L225.3 138.8 L224.3 137.5 L223.1 136.2 L221.8 135.1 L220.4 134.1 L218.9 133.2 L217.4 132.5 L215.8 131.9 L214.1 131.5 L212.4 131.2 L210.7 131 L209 131 L207.3 131.2 L205.6 131.5 L204 132 L202.4 132.6 L200.8 133.4 L199.4 134.2 L198 135.3 L196.7 136.4 L195.6 137.7 L194.5 139 L193.6 140.5 L192.8 142"/>
+<path class="turn" d="M192.3 134.6 L192.8 142 L198.8 137.6"/>
+<circle class="origin" cx="210" cy="150" r="2.6"/>
+<path class="lead" d="M280.5 195.5 L321.5 282.5"/>
+</svg>
+<span class="lab" style="left:69.52%;top:47.17%">$f_1$</span>
+<span class="lab" style="left:59.76%;top:24.84%">$f_2$</span>
+<span class="lab" style="left:40.24%;top:24.84%">$f_3$</span>
+<span class="lab" style="left:30.48%;top:47.17%">$f_4$</span>
+<span class="lab" style="left:40.24%;top:69.50%">$f_5$</span>
+<span class="lab" style="left:59.76%;top:69.50%">$f_6$</span>
+<span class="lab end" style="left:99.05%;top:94.34%">$f_6 = f_1 + 2\pi i$</span>
+</div></div>
+<figcaption><span class="n">Fig.&nbsp;1.</span> Logarithms $f_1, \dots, f_6$ of $z$ on six discs around the origin, each chosen to agree with the one before it on their overlap. After a full turn, $f_6 = f_1 + 2\pi i$ on the shaded overlap, so they do not glue together into a logarithm on $\mathbb{C}^*$. This mismatch is what $H^1(\mathbb{C}^*; \mathbb{Z}) \cong \mathbb{Z}$ detects.</figcaption>
+</figure>
+
+<p>The sheaf $\mathcal{O}$ assigns to each open set $U \subseteq \mathbb{C}$ the abelian group $\mathcal{O}(U)$ of holomorphic functions on $U$. We have the sheaf $\mathcal{O}^*$ of nowhere-vanishing holomorphic functions and the sheaf $\underline{\mathbb{Z}}$ of continuous functions to $\mathbb{Z}$. This yields the exponential sheaf sequence
+$$0 \longrightarrow \underline{\mathbb{Z}} \longrightarrow \mathcal{O} \xrightarrow{\;\exp\;} \mathcal{O}^* \longrightarrow 0,$$
+in which the first map is $n \mapsto 2\pi i n$. The exactness of this sequence is a local statement: every point has arbitrarily small neighbourhoods (open discs, for example) on which the induced sequence of groups is exact.</p>
+
+<p>This does not mean, however, that the sequence is exact for $U$ itself. If it were, then our exponential map would be surjective, and we would be able to extend our logarithm globally. It ought to strike anyone familiar with (co)homology that such tools are exactly what we need for such a problem.</p>
+
+<p>We will not properly define sheaf cohomology here (for one way, through Čech cohomology, see <a class="cite" href="#ref-bt82">[BT82, §10]</a>). For our purposes, we simply need to know that for a sheaf $\mathcal{F}$ of abelian groups on a space $X$, we have the sheaf cohomology groups $H^i(X, \mathcal{F})$, with $H^0(X, \mathcal{F}) = \mathcal{F}(X)$, and that a short exact sequence of sheaves gives a long exact sequence of abelian groups. For ours, it begins</p>
+
+<div class="cd-wrap" tabindex="0" role="group" aria-label="The long exact sequence of sheaf cohomology for the exponential sequence">
+<div class="cd" style="grid-template-columns:repeat(9,auto)" data-snakes="h0-os>h1-z">
+<span>$0$</span><span>$\longrightarrow$</span><span>$H^0(U, \underline{\mathbb{Z}})$</span><span>$\longrightarrow$</span><span>$H^0(U, \mathcal{O})$</span><span>$\xrightarrow{\;\exp\;}$</span><span data-node="h0-os">$H^0(U, \mathcal{O}^*)$</span><span></span><span></span>
+<span class="snake-label" data-label="h0-os>h1-z">$\delta$</span>
+<span></span><span></span><span data-node="h1-z">$H^1(U, \underline{\mathbb{Z}})$</span><span>$\longrightarrow$</span><span>$H^1(U, \mathcal{O})$</span><span>$\xrightarrow{\phantom{\;\exp\;}}$</span><span>$H^1(U, \mathcal{O}^*)$</span><span>$\longrightarrow$</span><span>$\cdots{.}$</span>
+</div>
+</div>
+
+<p>And by a (nontrivial) theorem, the first sheaf cohomology group $H^1(X, \underline{\mathbb{Z}})$ is isomorphic to the first singular cohomology group $H^1(X; \mathbb{Z})$ for sufficiently nice spaces $X$, such as manifolds <a class="cite" href="#ref-war83">[War83, Ch.&nbsp;5]</a>. Since $H^1(\mathbb{C}; \mathbb{Z}) = 0$, we see that we can extend our logarithm globally on $\mathbb{C}$. But since $H^1(\mathbb{C}^*; \mathbb{Z}) \cong \mathbb{Z}$ and $H^1(\mathbb{C}^*, \mathcal{O}) = 0$ <a class="cite" href="#ref-for81">[For81]</a>, the exponential map is not surjective on $\mathbb{C}^*$, and there we cannot. This example should show how sheaves are used to translate between local and global data, and how cohomology measures the failure of local data to be patched together.</p>
+
+<p>It is intended to illustrate how we can understand rather abstract concepts, in this case sheaf cohomology, through comparatively simpler ones, complex analysis here. We could have similarly done this for complex analysis, and for whatever concept we used for that, and so on. Thus, from a proper foundation, we can build up to ever more abstract ideas, in the true spirit of mathematics.</p>
+
+<p>There are obvious caveats to this. A major one is that in our above example, we did not even define sheaf cohomology rigorously. Indeed, our example skipped over details to emphasize the overarching concepts. The interplay between intuition and rigour in mathematics is very important during its study; to find balance is paramount to success.</p>
+
+<p>All the difficult mathematics I have learnt thus far has required a significant amount of time for the ideas to truly sink into my mind. Concepts in differential geometry, such as tangent spaces, were very difficult to visualize from an intrinsic perspective of manifolds, but now, after having learnt almost all their definitions at various levels of abstraction, and having used them for all of my study of differential forms, such concepts appear trivial &ndash; though I know they certainly are not.</p>
+
+<p>To conclude this point of mine, I present a remark of Grothendieck's, recorded by his biographer Allyn Jackson <a class="cite" href="#ref-jac04">[Jac04, p.&nbsp;1197]</a>. It should be noted, of course, that Grothendieck's perception of ‘obvious’ likely differed from ours.</p>
+
+<blockquote>
+<p>One thing Grothendieck said was that one should never try to prove anything that is not almost obvious.</p>
+<p class="label">Allyn Jackson, <i>Notices of the AMS</i>, 2004</p>
+</blockquote>
+
+<hr class="break">
+
+<p>It has not been too long since I first started using textbooks to study mathematics. Prior to my second year of sixth form, I relied on lecture notes, forum posts, online videos, and similar resources. For a lot of mathematics, even most of the typical undergraduate curriculum, that is sufficient, in my opinion. However, as I started learning more advanced concepts, differential geometry in particular, I needed to make use of essentially everything available to me.</p>
+
+<p>During the process of writing <a href="motivational_differential_forms_intro.pdf" type="application/pdf" target="_blank" rel="noopener"><i>A Motivational Introduction to Differential Forms</i></a>, I desired to obtain every single interpretation of differential forms that was freely available. This included perspectives that are not found via a simple, cursory glance at the subject. By collating a variety of sources, I was able to provide what I believe to be the best interpretation of differential forms for someone being introduced to them: a mixture of many different interpretations.</p>
+
+<p>Then, to cement my intuition-based foundation with mathematical rigour, I used various textbooks and resources to write my second expository paper on differential forms, which is, as of now, still in progress. The main textbook I used was Lee's <i>Introduction to Smooth Manifolds</i> <a class="cite" href="#ref-lee12">[Lee12]</a>, though I also used Tu's <i>An Introduction to Manifolds</i> <a class="cite" href="#ref-tu11">[Tu11]</a> extensively, especially after reaching the topics of de Rham cohomology and general homological algebra.</p>
+
+<p>Now, textbooks are my main source of study. Whenever possible, I aim to have multiple books on the same subject &ndash; one main text, and others to serve as references or alternative perspectives. For instance, I am currently studying algebraic topology with Hatcher's <i>Algebraic Topology</i> <a class="cite" href="#ref-hat02">[Hat02]</a>, though I am also using Lee's <i>Introduction to Topological Manifolds</i> <a class="cite" href="#ref-lee11">[Lee11]</a> as a reference text to aid in my understanding of the more general-topological concepts.</p>
+
+<p>Possessing a variety of perspectives on a topic in maths is crucial to understanding it. Sure, one can memorize lecture notes, their definitions, theorems, and proofs, and perform well in exams with that. But to actually understand the mathematical ideas to the greatest extent that is possible, a pursuit that ought not to be justified by anything more than its own sake, several readings of a topic are mandatory. The more ways one can think about something, the better.</p>
+
+<p>After reading through a section of a textbook, I have exercises to complete. A method of study such as the one I have described, with the goal of reaching the highest levels of abstraction, carries with it the risk of forgetting the necessity to also ground oneself in the concreteness of examples. Exercises are important. Without them, it is easy to falsely believe that one has understood a topic, despite not being able to apply it.</p>
+
+<hr class="break">
+
+<p>Although I attempt to learn new mathematical concepts quickly, mostly a consequence of ambition, I recognize that there are subjects that I am currently not ready for. Such subjects require prerequisite knowledge, or familiarity with prerequisite knowledge, that I simply do not possess. The example I will give is algebraic geometry. When I am ready, I will likely use Vakil's <i>The Rising Sea</i> <a class="cite" href="#ref-vak25">[Vak25]</a> to study it.</p>
+
+<p>In the meantime, whilst most of my focus is on algebraic topology, I aim to immerse myself in the essential ideas of algebraic geometry &ndash; currently via Reid's <i>Undergraduate Algebraic Geometry</i> <a class="cite" href="#ref-rei88">[Rei88]</a> &ndash; so that in the future, my pre-existing intuition significantly aids me. This strategy links to that which I have mentioned previously on intuition and exposure to new ideas.</p>
+
+<p>There are topics which are beyond my current understanding, and even the understanding I will have in a few years, yet I attempt to immerse myself in them. Since I arrived at university, I have been attending the research seminars that could possibly interest me. This has included the algebraic topology seminars, as well as the junior algebra seminars, and the geometry and topology seminars. Attendance allows me to survey possible areas for future study or research, as well as to embed them in my mind.</p>
+
+<hr class="break">
+
+<p>To write mathematics is to communicate mathematics, and it is completely different from simply studying it. One may reasonably argue that a person does not truly understand what they have studied if they cannot effectively communicate it to others. I have found that writing about the mathematics I am currently learning, usually taking the form of expository papers, helps to cement my understanding, revealing the gaps in my knowledge and what there is to study afterwards.</p>
+
+<p>My longest, most advanced project thus far is my <a href="mathematics.html#differential-geometry"><i>Treatise on Differential Forms</i></a>, which aims to cover everything that there is to know about differential forms. It follows on from <a href="motivational_differential_forms_intro.pdf" type="application/pdf" target="_blank" rel="noopener"><i>A Motivational Introduction to Differential Forms</i></a>, which aimed to introduce the subject to people with the bare minimum of prerequisites: multivariable calculus and linear algebra.</p>
+
+<p>Of course, there is only so much that can be taught to someone without a strong foundation, so a separate, more rigorous text had to be created. For it, I had to learn about concepts in differential geometry in their fullest generality, defining a tangent space as the set of derivations of germs of smooth functions; I had to use Bourbaki as a primary source for tensor algebras <a class="cite" href="#ref-bou89">[Bou89, Ch.&nbsp;III]</a>.</p>
+
+<p>Another way to communicate mathematics is orally. Throughout my time at sixth form, I delivered many talks for my school's maths society. These were not so much about developing my understanding (though they helped) as about talking to others about what interested me. Now that I am at university, with hundreds of maths students and dozens of professors and researchers, I wish to communicate maths much more.</p>
+
+<hr class="break">
+
+<p>Now, a major part of my methodology for studying mathematics is greatly intertwined with the type of mathematics that I have been recently learning. Much of maths is about generalization and abstraction, but as that is taken towards its limit, we arrive at rather specialized fields. I, personally, have not arrived at the limit, and I never will (for no one can), but I can apply what I have learnt from the journey to all areas of maths.</p>
+
+<p>After being first exposed to category theory through Cheng's <i>The Joy of Abstraction</i> <a class="cite" href="#ref-che23">[Che23]</a>, I started viewing other, seemingly unrelated concepts in maths through a category-theoretic lens. When exposed to the unfamiliar, I look at objects as varying structures with associated morphisms. Every object may be wholly described, up to isomorphism, by its relationships to other objects <a class="cite" href="#ref-rie16">[Rie16, §2.2]</a>. Viewing maths like this has undeniable merit: see Leinster's derivation of the Lebesgue integral <a class="cite" href="#ref-lei23">[Lei23]</a>.</p>
+
+<p>For a personal example, consider tensors. What is a tensor? The simplest answer is that tensors are multidimensional arrays; one can work with this, and give long formulae to describe how they transform under changes of coordinates. However, I only started to properly understand them after I learnt of the universal property of the tensor product (Fig.&nbsp;2).</p>
+
+<figure class="art-fig">
+<div class="cd" style="grid-template-columns:repeat(2,auto);column-gap:5em;row-gap:3.6em;padding-top:1.2em" data-arrows="vw>vt vw>u vt>u" data-dashed="vt>u" role="group" aria-label="V times W maps to V tensor W by the tensor product; V times W maps to U by h; there is a unique map h tilde from V tensor W to U">
+<span data-node="vw">$V \times W$</span><span data-node="vt">$V \otimes W$</span>
+<span></span><span data-node="u">$U$</span>
+<span class="cd-label" data-label="vw>vt">$\otimes$</span>
+<span class="cd-label" data-label="vw>u" data-side="right">$h$</span>
+<span class="cd-label" data-label="vt>u">$\exists!\,\tilde{h}$</span>
+</div>
+<figcaption><span class="n">Fig.&nbsp;2.</span> The universal property of the tensor product: for vector spaces $V$, $W$, and $U$, every bilinear map $h \colon V \times W \to U$ factors as $h = \tilde{h} \circ \otimes$ for a unique linear map $\tilde{h} \colon V \otimes W \to U$.</figcaption>
+</figure>
+
+<p>I needed to learn about tensors so that I could understand the formal definition of the exterior algebra &ndash; the initial portion of my <i>Treatise on Differential Forms</i>. I learnt the versatility of universal properties, finding them to be far more enlightening than the actual constructions, though I always provided at least one construction of a defined object.</p>
+
+<p>To conclude this article, I shall summarize my methodology as prioritizing intuition for difficult mathematical concepts, wanting them to seem trivial before needing to use a rigorous, formal approach. Through a category-theoretic lens, viewing objects by what they do instead of what they are, I may achieve the fullest understanding. Indeed, to understand is the reason to study.</p>
+
+<hr>
+<p class="label">References and further reading</p>
+<ol class="refs">
+<li id="ref-bou89"><span class="key">[Bou89]</span><span class="entry">N. Bourbaki, <i>Algebra I: Chapters 1&#8288;–&#8288;3</i>. Elements of Mathematics, Springer, 1989.</span></li>
+<li id="ref-bt82"><span class="key">[BT82]</span><span class="entry">R. Bott and L. W. Tu, <i>Differential Forms in Algebraic Topology</i>. Graduate Texts in Mathematics 82, Springer, 1982.</span></li>
+<li id="ref-che23"><span class="key">[Che23]</span><span class="entry">E. Cheng, <i>The Joy of Abstraction: An Exploration of Math, Category Theory, and Life</i>. Cambridge University Press, 2023.</span></li>
+<li id="ref-for81"><span class="key">[For81]</span><span class="entry">O. Forster, <i>Lectures on Riemann Surfaces</i>. Graduate Texts in Mathematics 81, Springer, 1981.</span></li>
+<li id="ref-hat02"><span class="key">[Hat02]</span><span class="entry">A. Hatcher, <i>Algebraic Topology</i>. Cambridge University Press, 2002.</span></li>
+<li id="ref-hem"><span class="key">[Hem]</span><span class="entry">N. Hemelsoet, ‘What is an intuitive Geometrical explanation of a “sheaf?” ’, Mathematics Stack Exchange, version of 29 May 2023. <a href="https://math.stackexchange.com/q/2642262">math.stackexchange.com/q/2642262</a></span></li>
+<li id="ref-jac04"><span class="key">[Jac04]</span><span class="entry">A. Jackson, ‘Comme Appelé du Néant: As If Summoned from the Void. The Life of Alexandre Grothendieck, Part II’, <i>Notices of the American Mathematical Society</i> 51 (2004), no. 10, 1196&#8288;–&#8288;1212. <a href="https://webusers.imj-prg.fr/~leila.schneps/grothendieckcircle/allyn2.pdf">PDF</a></span></li>
+<li id="ref-lee11"><span class="key">[Lee11]</span><span class="entry">J. M. Lee, <i>Introduction to Topological Manifolds</i>, 2nd ed. Graduate Texts in Mathematics 202, Springer, 2011.</span></li>
+<li id="ref-lee12"><span class="key">[Lee12]</span><span class="entry">J. M. Lee, <i>Introduction to Smooth Manifolds</i>, 2nd ed. Graduate Texts in Mathematics 218, Springer, 2012.</span></li>
+<li id="ref-lei23"><span class="key">[Lei23]</span><span class="entry">T. Leinster, ‘A categorical derivation of Lebesgue integration’, <i>Journal of the London Mathematical Society</i> 107 (2023), no. 6, 1959&#8288;–&#8288;1982. <a href="https://doi.org/10.1112/jlms.12730">doi:10.1112/jlms.12730</a> · <a href="https://arxiv.org/abs/2011.00412">arXiv:2011.00412</a></span></li>
+<li id="ref-rei88"><span class="key">[Rei88]</span><span class="entry">M. Reid, <i>Undergraduate Algebraic Geometry</i>. London Mathematical Society Student Texts 12, Cambridge University Press, 1988.</span></li>
+<li id="ref-rie16"><span class="key">[Rie16]</span><span class="entry">E. Riehl, <i>Category Theory in Context</i>. Dover, 2016. <a href="https://math.jhu.edu/~eriehl/context/">math.jhu.edu/~eriehl/context</a></span></li>
+<li id="ref-tu11"><span class="key">[Tu11]</span><span class="entry">L. W. Tu, <i>An Introduction to Manifolds</i>, 2nd ed. Universitext, Springer, 2011.</span></li>
+<li id="ref-vak25"><span class="key">[Vak25]</span><span class="entry">R. Vakil, <i>The Rising Sea: Foundations of Algebraic Geometry</i>. Princeton University Press, 2025.</span></li>
+<li id="ref-war83"><span class="key">[War83]</span><span class="entry">F. W. Warner, <i>Foundations of Differentiable Manifolds and Lie Groups</i>. Graduate Texts in Mathematics 94, Springer, 1983.</span></li>
+</ol>
+
+<p><a href="articles.html">../ articles</a></p>
+
+</main>
+
+<footer>
+<div class="wrap foot">
+<div class="label">© <span id="year">2026</span> Abdul Musthakin</div>
+<nav aria-label="Footer" class="foot-links">
+<a class="foot-link" href="../index.html#introduction">Introduction</a>
+<a class="foot-link" href="../index.html#preliminaries">Preliminaries</a>
+<a class="foot-link" href="../index.html#work">Work</a>
+<a class="foot-link" href="../index.html#references">References</a>
+<a class="foot-link" href="../index.html#contact">Contact</a>
+<a class="foot-link" href="../notes.html">Notes</a>
+</nav>
+</div>
+<div class="wrap colophon label">
+<span>Set in Courier Prime and DM Mono · Built with Claude<span id="modified"></span></span>
+<span class="qed" aria-hidden="true">∎</span>
+</div>
+</footer>
+<script src="../site.js"></script>
+<script>
+/* Typeset everything between $...$ and $$...$$ once the page and KaTeX have loaded. */
+window.addEventListener('load', function () {
+  if (!window.renderMathInElement) return;
+  renderMathInElement(document.body, {
+    delimiters: [
+      { left: '$$', right: '$$', display: true },
+      { left: '$', right: '$', display: false }
+    ],
+    ignoredClasses: ['no-math'],
+    throwOnError: false
+  });
+});
+</script>
+</body>
+</html>

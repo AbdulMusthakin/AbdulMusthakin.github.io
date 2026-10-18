@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Notes · Abdul Musthakin</title>
-<meta name="description" content="Expository mathematics notes by Abdul Musthakin.">
+<meta name="description" content="Notes on mathematics, physics, and finance, and non-technical articles, by Abdul Musthakin.">
 <link rel="canonical" href="https://abdulmusthakin.github.io/notes.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Notes · Abdul Musthakin">
-<meta property="og:description" content="Expository mathematics notes by Abdul Musthakin.">
+<meta property="og:description" content="Notes on mathematics, physics, and finance, and non-technical articles, by Abdul Musthakin.">
 <meta property="og:url" content="https://abdulmusthakin.github.io/notes.html">
 <meta property="og:image" content="https://abdulmusthakin.github.io/preview.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,7 +20,7 @@
 <link rel="preload" href="fonts/dm-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="site.css">
 </head>
-<body>
+<body class="topic">
 <a class="skip-link" href="#main">Skip to content</a>
 <header id="site-nav" class="site-nav sub-nav">
 <nav aria-label="Primary" class="wrap nav-inner">
@@ -37,42 +37,67 @@
 </div>
 </nav>
 </header>
-<main id="main" class="page-narrow" tabindex="-1">
+<main id="main" tabindex="-1">
 
-<nav class="crumbs" aria-label="Notes">
-<a href="#mathematics">mathematics</a>
-<span aria-hidden="true">·</span>
-<a href="#physics">physics</a>
-<span aria-hidden="true">·</span>
-<a href="#finance">finance</a>
+<div class="wrap topic-head">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="index.html">home</a><span aria-hidden="true">/</span><span aria-current="page">notes</span>
 </nav>
-
-<h1 class="page-title">Notes</h1>
-
+<div class="topic-intro single">
+<div class="topic-title">
+<div class="label">Writing</div>
+<h1>Notes<span class="slash" aria-hidden="true">/</span></h1>
 <p>[intro · what these notes are, and how they are written] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut sit.</p>
+</div>
+</div>
+</div>
 
-<hr class="rule">
-
-<section id="mathematics" class="notes-group">
-<h2>mathematics/</h2>
-<ol>
-<li><a href="motivational_differential_forms_intro.pdf" type="application/pdf" target="_blank" rel="noopener"><i>A Motivational Introduction to Differential Forms</i></a>, February 2026, 57&nbsp;pages <span class="status">[PDF · 0.7 MB]</span></li>
-<li><i>Treatise on Differential Forms</i>, an exhaustive and rigorous treatment, including the homological algebra <span class="status">[in progress · 83 pages so far]</span></li>
-<li>[written note · title] Lorem ipsum dolor sit amet, lorem <span class="status">[written · PDF to be added]</span></li>
-<li>[planned note · topic] Lorem ipsum dolor sit <span class="status">[planned]</span></li>
-<li>[planned · topic] Lorem <span class="status">[planned]</span></li>
-<li>[planned note · topic] Lorem ipsum dolor do <span class="status">[planned]</span></li>
+<section class="sec">
+<div class="wrap pad sec-body">
+<h2 class="sr-only">Folders</h2>
+<ol class="docs">
+<li class="doc" id="mathematics">
+<div class="doc-meta label"><span class="n">1</span><span>Expository notes</span></div>
+<div class="doc-main">
+<h3><a href="notes/mathematics.html">Mathematics/</a></h3>
+<p>[about · the mathematics notes, in a sentence] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+<ul class="dirs">
+<li><a href="notes/mathematics.html#algebraic-topology">algebraic-topology/</a></li>
+<li><a href="notes/mathematics.html#differential-geometry">differential-geometry/</a></li>
+<li><a href="notes/mathematics.html#algebraic-geometry">algebraic-geometry/</a></li>
+<li><a href="notes/mathematics.html#analysis">analysis/</a></li>
+<li><a href="notes/mathematics.html#discrete-mathematics">discrete-mathematics/</a></li>
+<li><a href="notes/mathematics.html#probability-and-statistics">probability-and-statistics/</a></li>
+</ul>
+</div>
+</li>
+<li class="doc" id="physics">
+<div class="doc-meta label"><span class="n">2</span><span>Expository notes</span></div>
+<div class="doc-main">
+<h3><a href="notes/physics.html">Physics/</a></h3>
+<p>[about · the physics notes, in a sentence] Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<ul class="dirs">
+<li><a href="notes/physics.html#general-relativity">general-relativity/</a></li>
+<li><a href="notes/physics.html#quantum-field-theory">quantum-field-theory/</a></li>
+</ul>
+</div>
+</li>
+<li class="doc" id="finance">
+<div class="doc-meta label"><span class="n">3</span><span>Expository notes</span></div>
+<div class="doc-main">
+<h3><a href="notes/finance.html">Finance/</a></h3>
+<p>[about · the finance notes, in a sentence] Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+</div>
+</li>
+<li class="doc" id="articles">
+<div class="doc-meta label"><span class="n">4</span><span>Non-technical writing</span></div>
+<div class="doc-main">
+<h3><a href="notes/articles.html">Articles/</a></h3>
+<p>[about · the non-technical articles: what they are about, and who they are for] Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div>
+</li>
 </ol>
-</section>
-
-<section id="physics" class="notes-group">
-<h2>physics/</h2>
-<p class="status">[empty]</p>
-</section>
-
-<section id="finance" class="notes-group">
-<h2>finance/</h2>
-<p class="status">[empty]</p>
+</div>
 </section>
 
 </main>
@@ -90,7 +115,7 @@
 </nav>
 </div>
 <div class="wrap colophon label">
-<span>Set in Courier Prime and DM Mono<span id="modified"></span></span>
+<span>Set in Courier Prime and DM Mono · Built with Claude<span id="modified"></span></span>
 <span class="qed" aria-hidden="true">∎</span>
 </div>
 </footer>

@@ -3,18 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- TEMPLATE FOR ONE NOTE. Copy this file, rename it (e.g. van-kampen.html), replace everything in
-     [SQUARE BRACKETS], and link to it from the notes page. Mathematics goes between dollar signs,
-     written as LaTeX: $...$ inside a sentence, $$...$$ on its own line. -->
+<!-- TEMPLATE FOR ONE NOTE. Copy this file, rename it (e.g. van-kampen.html), keep the copy here in notes/
+     with the topic pages and the PDFs, replace everything in [SQUARE BRACKETS], and list it on its topic's
+     page. Its two links to that page point to mathematics.html; change both if the note belongs under
+     another topic. Mathematics goes between dollar signs, written as LaTeX: $...$ inside a sentence,
+     $$...$$ on its own line. -->
 <title>[NOTE TITLE] · Abdul Musthakin</title>
 <meta name="description" content="[ONE-SENTENCE DESCRIPTION OF THE NOTE]">
-<link rel="icon" href="favicon.ico" sizes="32x32">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[NOTE TITLE] · Abdul Musthakin">
+<meta property="og:description" content="[THE SAME ONE-SENTENCE DESCRIPTION]">
+<meta property="og:url" content="https://abdulmusthakin.github.io/notes/[FILE NAME].html">
+<meta property="og:image" content="https://abdulmusthakin.github.io/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.ico" sizes="32x32">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <meta name="theme-color" content="#0d0307">
 <meta name="color-scheme" content="dark">
-<link rel="preload" href="fonts/dm-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css">
+<link rel="preload" href="../fonts/dm-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../site.css">
 <!-- KaTeX typesets the mathematics -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
@@ -24,26 +32,26 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <header id="site-nav" class="site-nav sub-nav">
 <nav aria-label="Primary" class="wrap nav-inner">
-<a class="brand" href="index.html">AM</a>
+<a class="brand" href="../index.html">AM</a>
 <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
 <div id="nav-links" class="nav-links">
-<a class="nav-link" href="index.html#introduction">Introduction</a>
-<a class="nav-link" href="index.html#preliminaries">Preliminaries</a>
-<a class="nav-link" href="index.html#work">Work</a>
-<a class="nav-link" href="index.html#references">References</a>
-<a class="nav-link" href="index.html#contact">Contact</a>
+<a class="nav-link" href="../index.html#introduction">Introduction</a>
+<a class="nav-link" href="../index.html#preliminaries">Preliminaries</a>
+<a class="nav-link" href="../index.html#work">Work</a>
+<a class="nav-link" href="../index.html#references">References</a>
+<a class="nav-link" href="../index.html#contact">Contact</a>
 <span class="nav-sep" aria-hidden="true"></span>
-<a class="nav-link current" aria-current="page" href="notes.html">Notes</a>
+<a class="nav-link current" aria-current="page" href="../notes.html">Notes</a>
 </div>
 </nav>
 </header>
 <main id="main" class="page-narrow" tabindex="-1">
 
 <nav class="crumbs" aria-label="Breadcrumb">
-<a href="index.html">home</a><span aria-hidden="true">/</span><a href="notes.html">notes</a><span aria-hidden="true">/</span><span>[this-note]</span>
+<a href="../index.html">home</a><span aria-hidden="true">/</span><a href="../notes.html">notes</a><span aria-hidden="true">/</span><a href="mathematics.html">[topic]</a><span aria-hidden="true">/</span><span>[this-note]</span>
 </nav>
 
-<div class="label">[SUBJECT, e.g. Algebraic topology] · [DATE]</div>
+<div class="label">[SUBJECT, e.g. Algebraic Topology] · [DATE]</div>
 <h1>[NOTE TITLE]</h1>
 
 <div class="abstract">
@@ -86,7 +94,7 @@ $$\begin{CD}
 <p class="label">References</p>
 <p>[Hat02] A. Hatcher, <i>Algebraic Topology</i>. Cambridge University Press, 2002. [REPLACE WITH THIS NOTE'S SOURCES.]</p>
 
-<p><a href="notes.html">../ notes</a></p>
+<p><a href="mathematics.html">../ [topic]</a></p>
 
 </main>
 
@@ -94,20 +102,20 @@ $$\begin{CD}
 <div class="wrap foot">
 <div class="label">© <span id="year">2026</span> Abdul Musthakin</div>
 <nav aria-label="Footer" class="foot-links">
-<a class="foot-link" href="index.html#introduction">Introduction</a>
-<a class="foot-link" href="index.html#preliminaries">Preliminaries</a>
-<a class="foot-link" href="index.html#work">Work</a>
-<a class="foot-link" href="index.html#references">References</a>
-<a class="foot-link" href="index.html#contact">Contact</a>
-<a class="foot-link" href="notes.html">Notes</a>
+<a class="foot-link" href="../index.html#introduction">Introduction</a>
+<a class="foot-link" href="../index.html#preliminaries">Preliminaries</a>
+<a class="foot-link" href="../index.html#work">Work</a>
+<a class="foot-link" href="../index.html#references">References</a>
+<a class="foot-link" href="../index.html#contact">Contact</a>
+<a class="foot-link" href="../notes.html">Notes</a>
 </nav>
 </div>
 <div class="wrap colophon label">
-<span>Set in Courier Prime and DM Mono<span id="modified"></span></span>
+<span>Set in Courier Prime and DM Mono · Built with Claude<span id="modified"></span></span>
 <span class="qed" aria-hidden="true">∎</span>
 </div>
 </footer>
-<script src="site.js"></script>
+<script src="../site.js"></script>
 <script>
 /* Typeset everything between $...$ and $$...$$ once the page and KaTeX have loaded. */
 window.addEventListener('load', function () {
