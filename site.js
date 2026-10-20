@@ -1,10 +1,12 @@
-/* site.js: header menu and footer details for the notes page, the pages in notes/, single notes and articles,
-   and the 404 page
-   (the home page carries its own copy of these, alongside its animation). */
+/* site.js: the scripts for every page except the home page (notes.html, the pages in notes/, single notes and
+   articles, and 404.html; the home page carries its own copy of the header and footer parts, alongside its
+   animation). In order:
+     the header menu on phones · links to other sites · the footer's year and date · contents counts on the
+     topic pages · figures that draw themselves, and their travelling points · reading times · margin notes in
+     articles · inline maths kept whole · diagrams (arrows, snakes, fitting to a phone). */
 (function () {
-  var nav = document.getElementById('site-nav');
-  if (nav) {
-    var btn = nav.querySelector('.menu-btn');
+  var nav = document.getElementById('site-nav'), btn = nav && nav.querySelector('.menu-btn');
+  if (btn) {
     var setOpen = function (open) {
       nav.classList.toggle('open', open);
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -23,10 +25,14 @@
   var mod = document.getElementById('modified'), when = new Date(document.lastModified);
   if (mod && !isNaN(when)) mod.textContent = ' · Last revised ' + when.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 
-  // the pages in notes/: the contents shows how many entries each subject has
+  // the pages in notes/: the contents shows how many notes each subject has, counting those written (a linked
+  // title, or a status of Written) and not those planned or in progress
   document.querySelectorAll('[data-count]').forEach(function (c) {
-    var sec = document.getElementById(c.getAttribute('data-count'));
-    var n = sec ? sec.querySelectorAll('.doc').length : 0;
+    var sec = document.getElementById(c.getAttribute('data-count')), n = 0;
+    if (sec) sec.querySelectorAll('.doc').forEach(function (d) {
+      var status = d.querySelector('.doc-meta span:not(.n)');
+      if (d.querySelector('h3 a[href]') || (status && /^Written/.test(status.textContent))) n++;
+    });
     c.textContent = n ? String(n) : '\u2013';
   });
 
@@ -91,21 +97,21 @@
   // Articles: each reference is repeated in the right margin, level with the line that first cites it, on screens
   // with room for a margin (site.css). Pointing at a citation lights up its note, as in §3 of the home page, and
   // the notes are built from the reference list, so they always agree with it.
-  var article = document.querySelector('.article-page main'), notes = [];
+  var article = document.querySelector('.article-page main'), notes = [], noteFor = {};
   if (article && article.querySelector('.refs')) {
     var aside = document.createElement('aside');
     aside.className = 'sidenotes'; aside.setAttribute('aria-hidden', 'true');
     article.querySelectorAll('.cite').forEach(function (c) {
       var id = c.getAttribute('href').slice(1), ref = document.getElementById(id);
       if (!ref || !ref.querySelector('.entry')) return;
-      var note = notes.filter(function (n) { return n.id === id; })[0];
+      var note = noteFor[id];
       if (!note) {
         var el = document.createElement('p');
         el.className = 'sidenote';
         el.innerHTML = '<span class="key">' + ref.querySelector('.key').innerHTML + '</span> ' + ref.querySelector('.entry').innerHTML;
         el.querySelectorAll('a').forEach(function (a) { a.tabIndex = -1; });   // the list below is the one to tab through
         aside.appendChild(el);
-        note = { id: id, el: el, cite: c }; notes.push(note);
+        note = noteFor[id] = { el: el, cite: c }; notes.push(note);
       }
       ['mouseenter', 'focus'].forEach(function (ev) { c.addEventListener(ev, function () { note.el.classList.add('lit'); }); });
       ['mouseleave', 'blur'].forEach(function (ev) { c.addEventListener(ev, function () { note.el.classList.remove('lit'); }); });

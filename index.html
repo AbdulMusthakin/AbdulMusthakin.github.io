@@ -260,19 +260,20 @@ try { if (localStorage.getItem('am-motion') === 'paused') document.documentEleme
     cv: function (a, v) { a.href = v; }
   };
   var newTab = { github: 1, linkedin: 1, cv: 1 };
+  function value(key) { return String(d[key] == null ? '' : d[key]).trim(); }   // "" for a missing or empty one
   document.querySelectorAll('[data-detail]').forEach(function (a) {
-    var key = a.getAttribute('data-detail'), v = String(d[key] == null ? '' : d[key]).trim();
+    var key = a.getAttribute('data-detail'), v = value(key);
+    if (!fill[key]) return;
     if (!v) { a.style.display = 'none'; return; }
     fill[key](a, v);
     if (newTab[key]) { a.target = '_blank'; a.rel = 'noopener'; }
   });
   // plain-text facts: an empty value hides the whole line
   document.querySelectorAll('[data-show]').forEach(function (box) {
-    var v = String(d[box.getAttribute('data-show')] == null ? '' : d[box.getAttribute('data-show')]).trim();
-    if (!v) box.style.display = 'none';
+    if (!value(box.getAttribute('data-show'))) box.style.display = 'none';
   });
   document.querySelectorAll('[data-text]').forEach(function (el) {
-    var v = String(d[el.getAttribute('data-text')] == null ? '' : d[el.getAttribute('data-text')]).trim();
+    var v = value(el.getAttribute('data-text'));
     if (!v) return;
     // a list written as "a · b · c" keeps each item whole when the line wraps
     el.textContent = '';
@@ -554,7 +555,7 @@ try { if (localStorage.getItem('am-motion') === 'paused') document.documentEleme
   document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
   document.addEventListener('am-motion', function (e) { paused = e.detail; paused ? stop() : start(); });
   if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function (es) { onScreen = es[0].isIntersecting; onScreen ? start() : stop(); }).observe(hero);
+    new IntersectionObserver(function (es) { onScreen = es[es.length - 1].isIntersecting; onScreen ? start() : stop(); }).observe(hero);
   }
   if ('ResizeObserver' in window) new ResizeObserver(resize).observe(hero); else window.addEventListener('resize', resize);
   resize(); start();
@@ -628,6 +629,7 @@ try { if (localStorage.getItem('am-motion') === 'paused') document.documentEleme
     return [r.cx + dx * s, r.cy + dy * s];
   }
 
+  var drawnUntil = 0;   // when the arrival drawing ends, so a relayout waits for it
   function draw(D, animate) {
     while (svg.firstChild) svg.removeChild(svg.firstChild);
     var boxes = {}, k, nodeTexts = [], arrows = [], cornerEl = null;
@@ -652,7 +654,7 @@ try { if (localStorage.getItem('am-motion') === 'paused') document.documentEleme
       var hl = 8, hw = 4.2;
       parts.rest.push(g.appendChild(el('path', { d: 'M' + (q[0] - ux * hl - uy * hw) + ' ' + (q[1] - uy * hl + ux * hw) + ' L' + q[0] + ' ' + q[1] + ' L' + (q[0] - ux * hl + uy * hw) + ' ' + (q[1] - uy * hl - ux * hw) })));
       // hooked tail for an inclusion
-      if (o.hook) parts.rest.push(g.appendChild(el('path', { d: 'M' + p[0] + ' ' + p[1] + ' A4 4 0 0 1 ' + (p[0] + uy * 8) + ' ' + (p[1] - ux * 8) + '' })));
+      if (o.hook) parts.rest.push(g.appendChild(el('path', { d: 'M' + p[0] + ' ' + p[1] + ' A4 4 0 0 1 ' + (p[0] + uy * 8) + ' ' + (p[1] - ux * 8) })));
       if (o.label) {
         var mx = (p[0] + q[0]) / 2, my = (p[1] + q[1]) / 2, off = 15 * (o.side || 1);
         // side 1 puts the label below a → arrow and left of a ↓ arrow; side -1 the opposite
@@ -660,8 +662,8 @@ try { if (localStorage.getItem('am-motion') === 'paused') document.documentEleme
       }
     });
     if (D.corner) {
-      var at = D.nodes[D.corner.at], fr = D.nodes[D.corner.from];
-      var cx = at[0] + (fr[0] - at[0]) * 0.27, cy = at[1] + (fr[1] - at[1]) * 0.27, s = 11;
+      var cn = D.nodes[D.corner.at], fr = D.nodes[D.corner.from];   // the corner's node, and the node it faces
+      var cx = cn[0] + (fr[0] - cn[0]) * 0.27, cy = cn[1] + (fr[1] - cn[1]) * 0.27, s = 11;
       var d = D.corner.type === 'pushout'
         ? 'M' + cx + ' ' + (cy + s) + ' V' + cy + ' H' + (cx + s)     // ⌜ opening towards the pushout
         : 'M' + (cx - s) + ' ' + cy + ' H' + cx + ' V' + (cy - s);    // ⌟ opening towards the pullback
@@ -670,20 +672,19 @@ try { if (localStorage.getItem('am-motion') === 'paused') document.documentEleme
     // arrival: the objects fade in, then each arrow draws itself from source to target, then the corner mark
     if (animate && svg.animate) {
       nodeTexts.forEach(function (t) { t.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 500, easing: 'ease-out', fill: 'backwards' }); });
-      var at = 380, DUR = 620, STEP = 170;
+      var FIRST = 380, DUR = 620, STEP = 170;   // ms: when the first arrow starts, how long each takes, and the stagger
       arrows.forEach(function (a, i) {
-        var delay = at + i * STEP, L = a.shaft.getTotalLength();
+        var delay = FIRST + i * STEP, len = a.shaft.getTotalLength();
         if (a.dashed) a.shaft.animate([{ opacity: 0 }, { opacity: 1 }], { duration: DUR, delay: delay, fill: 'backwards' });
-        else a.shaft.animate([{ strokeDasharray: L + ' ' + L, strokeDashoffset: L }, { strokeDasharray: L + ' ' + L, strokeDashoffset: 0 }],
+        else a.shaft.animate([{ strokeDasharray: len + ' ' + len, strokeDashoffset: len }, { strokeDasharray: len + ' ' + len, strokeDashoffset: 0 }],
                              { duration: DUR, delay: delay, easing: 'cubic-bezier(.65,0,.35,1)', fill: 'backwards' });
         a.rest.forEach(function (e) { e.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 260, delay: delay + DUR - 160, fill: 'backwards' }); });
       });
-      var end = at + Math.max(arrows.length - 1, 0) * STEP + DUR;
+      var end = FIRST + Math.max(arrows.length - 1, 0) * STEP + DUR;
       if (cornerEl) cornerEl.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 400, delay: end, fill: 'backwards' });
       drawnUntil = performance.now() + end + 400;
     }
   }
-  var drawnUntil = 0;
 
   var current = 0;
   function show(i, animate) {
@@ -722,7 +723,9 @@ try { if (localStorage.getItem('am-motion') === 'paused') document.documentEleme
 </script>
 
 <script>
-/* Header: transparent over the top section, solid bar once you scroll; phone menu toggle. */
+/* Header: transparent over the top section, solid bar once you scroll; the phone menu; the pause button; the
+   sliding underline that marks the section being read; the glow on a subsection reached by a link; and the
+   footer's year and date. */
 (function () {
   var nav = document.getElementById('site-nav');
   if (!nav) return;

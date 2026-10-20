@@ -54,22 +54,30 @@ studies and links to his writing.
   (`reading`, `readingDate`). An empty value hides its line or link. `reading` lists texts separated by
   ` · `, and each item stays whole when the line wraps. `index.html` holds plain-text copies of these
   details for visitors without JavaScript; keep them roughly in step.
-- `site.css`: all styles for every page.
+- `site.css`: all styles for every page, in the order listed in its opening comment. An image embedded in
+  it (the article's swash, floral heart and link arrow) is held once, in a custom property on the rule that
+  uses it (`--swash`, `--heart`, `--arrow`), so the prefixed and unprefixed mask properties share it.
 - `fonts/goudy-initialen.woff2`: the initial at the head of an article. It is `GoudyInitialen.ttf` (from 1001
   Fonts, under its Free for Commercial Use licence) converted to WOFF2 complete and unmodified: the licence
   forbids subsetting or other changes. The .ttf is listed in `.gitignore`, so the font itself is never pushed.
-- `site.js`: the menu, footer year and date, and new-tab links for every page except `index.html`
-  (`notes.html`, the pages in `notes/`, both templates and `404.html`).
+- `site.js`: everything scripted on every page except `index.html` (`notes.html`, the pages in `notes/`,
+  both templates and `404.html`): the menu, new-tab links, the footer's year and date, the topic pages'
+  counts and figures, reading times, articles' margin notes, keeping inline maths whole, and diagrams. Its
+  opening comment lists the parts in order.
 - `notes.html`: the notes index, set like the topic pages: a title block, then one row per page in
   `notes/` (mathematics, physics, finance, articles), each with a one-line description and, where the page
-  has them, links to its subjects. The rows keep the ids `#mathematics` and so on.
+  has them, links to its subjects. The rows keep the ids `#mathematics` and so on, and are numbered
+  `§1` to `§4`: a bare number beside "Expository notes" reads as a count of notes.
 - `notes/`: everything written. One page per topic (`mathematics.html`, `physics.html`, `finance.html`)
   plus `articles.html` for non-technical writing, which list the notes and articles (not `notes.html`; see
   below); the PDFs, and any notes or articles written as web pages; and the two templates. Files in
   `notes/` link to each other by plain name (`mellin_transform.pdf`, `mathematics.html`), and to the rest
   of the site with `../` (`../site.css`, `../index.html#work`).
 - `notes/note-template.html`: a template for a note written as a web page, with LaTeX via KaTeX (CDN). It
-  is excluded from publishing; copy and rename it inside `notes/` to make a note.
+  is excluded from publishing; copy and rename it inside `notes/` to make a note. KaTeX is pinned to 0.16.11
+  and each of its three files carries an `integrity` hash, so a page only uses the exact file it expects;
+  moving to another version means replacing all three hashes (KaTeX's own installation instructions list
+  them), here and in any page copied from it.
 - `notes/article-template.html`: the same for a non-technical article, without KaTeX. Also excluded;
   copies stay in `notes/` and are listed on `articles.html`.
 - `404.html`: GitHub Pages serves it for any missing address at any depth, so its links start from the
@@ -97,7 +105,9 @@ studies and links to his writing.
   redone), then one numbered section per subject (`§1`, `§2` …, alternate
   sections `class="sec alt"`). A subject's section has its description and a "See also" link to its
   home-page subsection on the left, its figure on the right, and its entries below the description.
-  - The Contents counts each subject's entries automatically (`data-count` in `site.js`); never type them.
+  - The Contents counts each subject's written notes automatically (`data-count` in `site.js`): an entry
+    counts when its title is a link or its status is `Written`, not when it is `Planned`, `In progress`,
+    or a placeholder. Never type the counts.
   - A new subject needs a section (copy one), a line in Contents, a figure, and a link in its block in
     `notes.html`. Renumber the sections, figures and entries after it.
 - **Entries** are rows in `<ol class="docs">`, numbered by section (`2.1`, `2.2` …):
@@ -118,6 +128,9 @@ studies and links to his writing.
   path while it is pointed at, as on the contour and the worldline. A figure that
   illustrates one of the papers uses that paper's notation (Fig. 4 follows the Dirichlet integral's Γ, γ and ×).
 - New published pages go in `sitemap.xml`.
+- **The header's current link**: on `notes.html` its Notes link has `class="current" aria-current="page"`;
+  on the pages inside `notes/` it has `class="current" aria-current="true"` (the section you are in, not
+  the page itself).
 - **PDFs** of notes sit in `notes/`, beside the pages that list them; only the CV stays in the root. Sizes
   are given to one decimal place in MB. Commit a PDF when it is finished: git keeps every
   committed version, and PDFs don't compress against earlier versions. Size limits: GitHub warns at
@@ -155,15 +168,16 @@ studies and links to his writing.
     paragraphs at line-height 1.85), with the rest of its first line in small capitals. Tried and set
     aside: a Courier Prime capital in a hatched box, a foliated version, Yinit (its blackletter I reads as
     J) and the same Goudy initial in the pale pink.
-  - No headings: sections are separated by `<hr class="break">`, drawn as a broken swash, 132px wide,
-    modelled on the swashes in Quanta's Qualia essays: an S-curve that is the same turned upside down, with a
-    tight curl into the hump and the trough and a long straight diagonal between them, broken in the middle.
-    Each half runs on a little past the middle and is cut square, and the halves are tilted apart so they lie
-    side by side where they overlap. It is drawn with a broad nib held steeply, so the diagonal is heaviest
-    and the curls thin out to small rounded ends; its thickness, end to end, follows the Qualia swash's. The
-    unbroken swash, drawn the same way, was the alternative. Rejected: a plain sine wave with hairline ends
-    (too thin) or with blunt, rounded ends (did not look good). More ornate breaks (swelled rules, fleurons,
-    filigree) were too much for how often breaks occur.
+  - No headings: sections are separated by `<hr class="break">`, drawn as a broken swash as wide as ten
+    characters of the text (`10ch`, as Quanta sets theirs), modelled on the swashes in Quanta's Qualia essays:
+    an S-curve that is the same turned upside down, with a tight curl into the hump and the trough and a long
+    straight diagonal between them, broken in the middle. Each half runs on a little past the middle and is
+    cut square, and the halves are tilted apart so they lie side by side where they overlap. It is drawn with
+    a broad nib held steeply, so the diagonal is heaviest and the curls thin out to small rounded ends; its
+    thickness, end to end, follows the Qualia swash's. The unbroken swash, drawn the same way, was the
+    alternative. Rejected: a plain sine wave with hairline ends (too thin) or with blunt, rounded ends (did
+    not look good). More ornate breaks (swelled rules, fleurons, filigree) were too much for how often breaks
+    occur.
   - Links to other sites carry a small arrow, and the last paragraph ends with an upright floral heart (❦).
     Not the tombstone (∎): that ends proofs.
   - Displays belong to their sentences: put `$$…$$` inside the `<p>`, with its punctuation inside the
